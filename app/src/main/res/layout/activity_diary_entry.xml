@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Diary.DiaryEntry">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/attachPhoto"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:clickable="false"
+        android:scaleType="center"
+        app:backgroundTint="@color/diaryColor"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/journalContent"
+        app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="35dp"
+        app:srcCompat="@drawable/attachfile" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/location"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:clickable="false"
+        android:scaleType="center"
+        android:visibility="gone"
+        app:backgroundTint="@color/diaryColor"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/attachPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/journalContent"
+        app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/location" />
+
+    <TextView
+        android:id="@+id/dateOfEntry"
+        android:layout_width="117dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/belgrano"
+        android:textAlignment="center"
+        android:textColor="@color/diaryColor"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toEndOf="@+id/journalTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/lineDivider"
+        android:layout_width="395dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateOfEntry"
+        app:srcCompat="@drawable/horizontal_divider" />
+
+    <EditText
+        android:id="@+id/journalContent"
+        android:layout_width="0dp"
+        android:layout_height="520dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:gravity="start"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineDivider"
+        tools:ignore="LabelFor" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/doneButton"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="36dp"
+        android:clickable="false"
+        android:scaleType="center"
+        app:backgroundTint="@color/diaryColor"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+        app:layout_constraintTop_toBottomOf="@+id/journalContent"
+        app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="33dp"
+        app:srcCompat="@drawable/tick_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cancelButton"
+        android:layout_width="63dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:scaleType="center"
+        app:backgroundTint="@color/diaryColor"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/journalContent"
+        app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="33dp"
+        app:srcCompat="@drawable/cross" />
+
+    <EditText
+        android:id="@+id/journalTitle"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:backgroundTint="#FFFFFF"
+        android:clickable="false"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="textPersonName"
+        android:maxLength="20"
+        android:textAlignment="viewStart"
+        android:textColor="@color/diaryColor"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/lineDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <FrameLayout
+        android:id="@+id/photo_upload_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

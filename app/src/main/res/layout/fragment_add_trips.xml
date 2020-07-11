@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trips_background_image">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="93dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Add Trip"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textSize="42sp" />
+
+
+    <EditText
+        android:id="@+id/destinationInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#D9FFFFFF"
+        android:ems="10"
+        android:hint="Japan"
+        android:inputType="textPersonName"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/nameOfTrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="190dp"
+        android:background="#99FFFFFF"
+        android:text="Name of Trip:"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="250dp"
+        android:background="#CCFFFFFF"
+        android:text="Destination:"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="310dp"
+        android:background="#CCFFFFFF"
+        android:text="Start Date:"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="370dp"
+        android:background="#CCFFFFFF"
+        android:text="End Date:"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/startDateInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#D9FFFFFF"
+        android:ems="10"
+        android:hint="22/05/2020"
+        android:inputType="date"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/endDateInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#D9FFFFFF"
+        android:ems="10"
+        android:hint="31/05/2020"
+        android:inputType="date"
+        android:textColor="#000000" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginBottom="219dp"/>
+
+    <EditText
+        android:id="@+id/nameOfTripInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="50dp"
+        android:background="#CCFFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Graduation Trip"
+        android:inputType="textPersonName"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="206dp"
+        android:text="Add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="33dp"
+        android:clickable="true"
+        android:elevation="0dp"
+        app:backgroundTint="#02FFFFFF"
+        app:elevation="0dp"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+</RelativeLayout>

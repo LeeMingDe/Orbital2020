@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/placeTitle"
+        android:layout_width="220dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/placeholder"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/rb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rb"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="82dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="16dp"
+        android:numStars="5"
+        app:layout_constraintBottom_toTopOf="@+id/placePickerAddress"
+        app:layout_constraintStart_toEndOf="@+id/rate" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="3.8"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rb"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/placePickerAddress"
+        android:layout_width="337dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:minLines="2"
+        android:text="@string/placeholder"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="110dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp"
+        app:cardCornerRadius="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/placePickerAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/placeTitle"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/placePickPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

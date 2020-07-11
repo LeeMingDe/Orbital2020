@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="665dp"
+        tools:context=".MapsActivity" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/white_border"
+        android:elevation="10dp">
+
+        <ImageView
+            android:id="@+id/magnify"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="false"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/search_icon" />
+
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/magnify"
+            android:background="@null"
+            android:hint="Enter Address, City or Zip Code"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="665dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="8dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/locateUser"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:src="@drawable/gps_icon"
+            app:elevation="2dp"
+            app:fabCustomSize="40sp"
+            app:fabSize="normal"
+            app:layout_anchor="@+id/bottom_sheet"
+            app:layout_anchorGravity="top|end"
+            app:layout_dodgeInsetEdges="bottom" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/placePick"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:src="@drawable/place_picker_icon"
+            app:elevation="2dp"
+            app:fabCustomSize="40sp"
+            app:fabSize="normal"
+            app:layout_anchor="@+id/bottom_sheet"
+            app:layout_anchorGravity="top|end"
+            app:layout_dodgeInsetEdges="bottom" />
+
+        <include layout="@layout/map_info_window" />
+
+        <include layout="@layout/map_place_picker"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

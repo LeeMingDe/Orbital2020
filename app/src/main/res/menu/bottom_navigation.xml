@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id = "@+id/nav_trips"
+        android:icon = "@drawable/ic_trips_black_24dp"
+        android:title = "@string/nav_trips_name" />
+
+    <item
+        android:id = "@+id/nav_dairy"
+        android:icon = "@drawable/ic_book_black_24dp"
+        android:title = "@string/nav_diary_name" />
+
+    <item
+        android:id = "@+id/nav_reviews"
+        android:icon = "@drawable/ic_star_black_24dp"
+        android:title = "@string/nav_reviews_name" />
+
+    <item
+        android:id = "@+id/nav_converter"
+        android:icon = "@drawable/ic_converter_black_24dp"
+        android:title = "@string/nav_converter_name" />
+
+    <item
+        android:id = "@+id/nav_settings"
+        android:icon = "@drawable/ic_settings_black_24dp"
+        android:title = "@string/nav_settings_name" />
+
+</menu>
