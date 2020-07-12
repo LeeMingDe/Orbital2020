@@ -26,7 +26,7 @@
     <!--Bottom Navigation Strings-->
     <string name="nav_trips_name">Trips</string>
     <string name="nav_diary_name">Dairy</string>
-    <string name="nav_reviews_name">Reviews</string>
+    <string name="nav_map_name">Map</string>
     <string name="nav_converter_name">Converter</string>
     <string name="nav_settings_name">Settings</string>
 
@@ -38,10 +38,47 @@
     <string name="diary_fragment_name">Diary Fragment</string>
 
     <!-- Reviews Fragment Strings-->
-    <string name="reviews_fragment_name">Reviews Fragment</string>
+    <string name="reviews_fragment_name">Map Fragment</string>
 
     <!-- Converter Fragment Strings-->
     <string name="converter_fragment_name">Converter Fragment</string>
+
+    <string-array name="currencyInput">
+        <item>SGD</item>
+        <item>AUD</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>HKD</item>
+        <item>HRK</item>
+        <item>HUF</item>
+        <item>IDR</item>
+        <item>ILS</item>
+        <item>INR</item>
+        <item>ISK</item>
+        <item>JPY</item>
+        <item>KRW</item>
+        <item>MXN</item>
+        <item>MYR</item>
+        <item>NOK</item>
+        <item>NZD</item>
+        <item>PHP</item>
+        <item>PLN</item>
+        <item>RON</item>
+        <item>RUB</item>
+        <item>SEK</item>
+        <item>THB</item>
+        <item>TRY</item>
+        <item>USD</item>
+        <item>ZAR</item>
+
+    </string-array>
 
     <!-- Settings Fragment Strings-->
     <string name="settings_fragment_name">Settings Fragment</string>
@@ -55,5 +92,9 @@
     <string name="photo">Photo</string>
     <string name="gallery">Gallery</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_test">Map</string>
 
 </resources>

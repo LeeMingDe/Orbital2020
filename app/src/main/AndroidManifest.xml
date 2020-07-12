@@ -8,8 +8,9 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
@@ -33,9 +34,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <activity
             android:name=".Maps.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".Trips.TripActivitiesEdit" />
+        <activity android:name=".Trips.TripActivitiesEntry" />
+        <activity android:name=".Trips.TripActivities" />
+        <activity android:name=".Trips.TripsEdit" />
+        <activity android:name=".Trips.TripsEntry" />
         <activity android:name=".Diary.ShowImageUpload" />
         <activity android:name=".Diary.ViewDiaryEntry" />
         <activity android:name=".Diary.DiaryEntry" />

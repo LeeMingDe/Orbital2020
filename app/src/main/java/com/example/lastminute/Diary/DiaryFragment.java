@@ -44,19 +44,13 @@ public class DiaryFragment extends Fragment implements FirebaseAuth.AuthStateLis
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_diary, container, false);
+        View view = inflater.inflate(R.layout.fragment_diary, container, false);
         setUpUIView(view);
-        customizeToolbar();
+        entry();
+        addDividerInRecyclerView();
         initializeRecyclerView(FirebaseAuth.getInstance().getCurrentUser());
+        customizeToolbar();
         setHasOptionsMenu(true);
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                entry();
-                addDividerInRecyclerView();
-            }
-        });
-        thread.start();
         return view;
     }
 

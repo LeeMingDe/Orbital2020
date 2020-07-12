@@ -34,15 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // AddTrips Button
-        TripsFragment tripsFragment = new TripsFragment();
-        FragmentManager fm = getSupportFragmentManager();
-//        fm.beginTransaction().add(R.id.mainLayout, tripsFragment).commit();
-
-        // Goback button
-        AddTripsFragment tripsFragment1 = new AddTripsFragment();
-        FragmentManager fm1 = getSupportFragmentManager();
-//        fm.beginTransaction().add(R.id.mainLayout, tripsFragment).commit();
 
         // For bottom navigation
         bottomNav = findViewById(R.id.bottom_navigation);
@@ -50,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         // To start app beginning with Trips Page
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new TripsFragment()).commit();
+                new com.example.lastminute.Trips.TripsFragment()).commit();
 
         undoDelete();
         toDiaryFragment();
@@ -64,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_trips:
-                            selectedFragment = new TripsFragment();
+                            selectedFragment = new com.example.lastminute.Trips.TripsFragment();
                             break;
                         case R.id.nav_dairy:
                             selectedFragment = new DiaryFragment();
                             break;
-                        case R.id.nav_reviews:
+                        case R.id.nav_map:
                             if (isServicesWorking()) {
                                 selectedFragment = new MapFragment();
                             } else {
@@ -141,5 +132,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
-
 }

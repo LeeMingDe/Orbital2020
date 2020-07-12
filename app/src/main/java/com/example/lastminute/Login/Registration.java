@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lastminute.Login.LoginPage;
 import com.example.lastminute.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -154,7 +155,7 @@ public class Registration extends AppCompatActivity {
 	private void sendUserData() {
 		FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 		DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-		UserProfile userProfile = new UserProfile(email, name);
+		com.example.lastminute.Login.UserProfile userProfile = new com.example.lastminute.Login.UserProfile(email, name);
 		myRef.setValue(userProfile);
 	}
 

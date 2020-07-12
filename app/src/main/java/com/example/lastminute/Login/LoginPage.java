@@ -65,7 +65,7 @@ public class LoginPage extends AppCompatActivity {
         userSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this, Registration.class));
+                startActivity(new Intent(LoginPage.this, com.example.lastminute.Login.Registration.class));
             }
         });
     }
@@ -125,7 +125,7 @@ public class LoginPage extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this, PasswordRecovery.class));
+                startActivity(new Intent(LoginPage.this, com.example.lastminute.Login.PasswordRecovery.class));
             }
         });
     }

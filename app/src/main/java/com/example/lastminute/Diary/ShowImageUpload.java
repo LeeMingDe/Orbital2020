@@ -2,14 +2,10 @@ package com.example.lastminute.Diary;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,13 +20,11 @@ import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 
-public class ShowImageUpload extends AppCompatActivity implements FirebaseAuth.AuthStateListener,
-        View.OnTouchListener {
+public class ShowImageUpload extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
     private RecyclerView recyclerView;
     private ImageAdapter imageAdapter;
     private String documentPath;
     private RecyclerAdapterBeforeUploading mAdapter;
-    private GestureDetector detector;
 
 
     @Override
@@ -39,9 +33,13 @@ public class ShowImageUpload extends AppCompatActivity implements FirebaseAuth.A
         setContentView(R.layout.activity_show_image_upload);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setOnTouchListener(this);
-        initializeRecyclerView();
-        goBack();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                initializeRecyclerView();
+            }
+        });
+        thread.start();
     }
 
     private void initializeRecyclerView() {
@@ -69,18 +67,6 @@ public class ShowImageUpload extends AppCompatActivity implements FirebaseAuth.A
         }
     }
 
-    private void goBack() {
-        detector = new GestureDetector(this, new onSwipeListener() {
-            @Override
-            public boolean onSwipe(Direction direction) {
-                if (direction == Direction.right) {
-                    onBackPressed();
-                }
-                return super.onSwipe(direction);
-            }
-        });
-    }
-
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
         if (firebaseAuth.getCurrentUser() == null) {
@@ -100,9 +86,4 @@ public class ShowImageUpload extends AppCompatActivity implements FirebaseAuth.A
         FirebaseAuth.getInstance().removeAuthStateListener(this);
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        detector.onTouchEvent(event);
-        return true;
-    }
 }

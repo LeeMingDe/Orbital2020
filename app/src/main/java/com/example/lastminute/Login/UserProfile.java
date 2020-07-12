@@ -1,5 +1,4 @@
 package com.example.lastminute.Login;
-
 /**
  * A class that acts like a data structure to store user information
  */

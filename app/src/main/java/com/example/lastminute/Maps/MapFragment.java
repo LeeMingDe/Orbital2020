@@ -137,15 +137,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                              @Nullable Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_map, container, false);
         MapsInitializer.initialize(getActivity());
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                initializePlacesSDK();
-                getLocationPermission();
-            }
-        });
-        thread.start();
         setUpUIView(v);
+        initializePlacesSDK();
+        getLocationPermission();
         initializeMap();
         return v;
     }

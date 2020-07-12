@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">lastMinute</string>
+    <!-- LoginPage Strings-->
+    <string name="lastminute">lastMinute</string>
+    <string name="appicon">appicon</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="forgot_password">Forgot password?</string>
+
+    <!-- Registration Strings -->
+    <string name="register_here">Register here</string>
+    <string name="registration">Registration</string>
+
+    <!-- PasswordRecovery Strings-->
+    <string name="password_reset">Password Reset</string>
+    <string name="enter_your_email_address_that_you_used_to_register_we_ll_send_you_an_email_with_a_link_to_reset_your_password">Enter your email address that you used to register. We\'ll send you an email with a link to reset your password.</string>
+    <string name="reset_password">Reset Password</string>
+
+    <!-- TODO: placeholder (For after logging in) -->
+    <string name="log_out">Log Out</string>
+
+    <!--Bottom Navigation Strings-->
+    <string name="nav_trips_name">Trips</string>
+    <string name="nav_diary_name">Dairy</string>
+    <string name="nav_map_name">Map</string>
+    <string name="nav_converter_name">Converter</string>
+    <string name="nav_settings_name">Settings</string>
+
+    <!-- Trips Fragment Strings-->
+    <string name="trips_heading">Trips</string>
+
+
+    <!-- Diary Fragment Strings-->
+    <string name="diary_fragment_name">Diary Fragment</string>
+
+    <!-- Reviews Fragment Strings-->
+    <string name="reviews_fragment_name">Map Fragment</string>
+
+    <!-- Converter Fragment Strings-->
+    <string name="converter_fragment_name">Converter Fragment</string>
+
+    <string-array name="currencyInput">
+        <item>SGD</item>
+        <item>AUD</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>HKD</item>
+        <item>HRK</item>
+        <item>HUF</item>
+        <item>IDR</item>
+        <item>ILS</item>
+        <item>INR</item>
+        <item>ISK</item>
+        <item>JPY</item>
+        <item>KRW</item>
+        <item>MXN</item>
+        <item>MYR</item>
+        <item>NOK</item>
+        <item>NZD</item>
+        <item>PHP</item>
+        <item>PLN</item>
+        <item>RON</item>
+        <item>RUB</item>
+        <item>SEK</item>
+        <item>THB</item>
+        <item>TRY</item>
+        <item>USD</item>
+        <item>ZAR</item>
+
+    </string-array>
+
+    <!-- Settings Fragment Strings-->
+    <string name="settings_fragment_name">Settings Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
+    <string name="placeholder">placeholder</string>
+    <string name="divider">divider</string>
+    <string name="media">Media</string>
+    <string name="photo">Photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>

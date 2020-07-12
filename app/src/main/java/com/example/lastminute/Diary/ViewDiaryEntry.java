@@ -56,9 +56,9 @@ public class ViewDiaryEntry extends AppCompatActivity implements View.OnTouchLis
         setContentView(R.layout.activity_view_diary_entry);
         setUpUIView();
         customizeToolbar();
-        constraintLayout.setOnTouchListener(this);
         viewEntry();
         viewPhotos();
+        constraintLayout.setOnTouchListener(this);
     }
 
     @Override
