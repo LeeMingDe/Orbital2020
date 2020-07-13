@@ -1,4 +1,4 @@
-package com.example.lastminute;
+package com.example.lastminute.Converter;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
@@ -18,6 +18,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.lastminute.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

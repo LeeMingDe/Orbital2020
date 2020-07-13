@@ -3,7 +3,6 @@ package com.example.lastminute;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.lastminute.Converter.ConverterFragment;
 import com.example.lastminute.Diary.DiaryEntryDetails;
 import com.example.lastminute.Diary.DiaryFragment;
 import com.example.lastminute.Diary.PhotoUploadDetails;

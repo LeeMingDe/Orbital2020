@@ -1,4 +1,4 @@
-package com.example.lastminute;
+package com.example.lastminute.Converter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
