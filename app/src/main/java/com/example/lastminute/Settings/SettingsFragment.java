@@ -1,22 +1,24 @@
-package com.example.lastminute;
+package com.example.lastminute.Settings;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.lastminute.Login.LoginPage;
+import com.example.lastminute.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
-    private FloatingActionButton logOut;
+    private TextView general, notification, security, data, help, logOut;
 
 
     @Nullable
@@ -29,7 +31,12 @@ public class SettingsFragment extends Fragment {
     }
 
     private void setUpUIView(View v) {
-        logOut = (FloatingActionButton) v.findViewById(R.id.logOut);
+        general = (TextView) v.findViewById(R.id.general);
+        notification = (TextView) v.findViewById(R.id.notification);
+        security = (TextView) v.findViewById(R.id.security);
+        data = (TextView) v.findViewById(R.id.data);
+        help = (TextView) v.findViewById(R.id.help);
+        logOut = (TextView) v.findViewById(R.id.logOut);
     }
 
     private void logOutFromAccount() {

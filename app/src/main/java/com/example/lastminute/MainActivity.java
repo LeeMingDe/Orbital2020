@@ -15,6 +15,7 @@ import com.example.lastminute.Diary.DiaryEntryDetails;
 import com.example.lastminute.Diary.DiaryFragment;
 import com.example.lastminute.Diary.PhotoUploadDetails;
 import com.example.lastminute.Maps.MapFragment;
+import com.example.lastminute.Settings.SettingsFragment;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
