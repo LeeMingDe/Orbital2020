@@ -3,6 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +51,11 @@ public class TripActivitiesEntry extends AppCompatActivity {
         addActivityDescriptionInput = (EditText) findViewById(R.id.addActivityDescriptionInput);
         addActivityButton = (Button) findViewById(R.id.addActivityButton);
         cancelActivityButton = (Button) findViewById(R.id.cancelActivityButton);
+
+        addActivityNameInput.addTextChangedListener(activityTextWatcher);
+        addActivityPlaceInput.addTextChangedListener(activityTextWatcher);
+        addActivityDateInput.addTextChangedListener(activityTextWatcher);
+        addActivityTimeInput.addTextChangedListener(activityTextWatcher);
 
     }
 
@@ -105,6 +112,28 @@ public class TripActivitiesEntry extends AppCompatActivity {
         intent.putExtra("pathToTripDoc", pathToTripDoc);
         startActivity(intent);
     }
+
+    private TextWatcher activityTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String name = addActivityNameInput.getText().toString().trim();
+            String place = addActivityPlaceInput.getText().toString().trim();
+            String date = addActivityDateInput.getText().toString().trim();
+            String time = addActivityTimeInput.getText().toString().trim();
+
+            addActivityButton.setEnabled(!name.isEmpty() && !place.isEmpty() && !date.isEmpty() && !time.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }
 
 

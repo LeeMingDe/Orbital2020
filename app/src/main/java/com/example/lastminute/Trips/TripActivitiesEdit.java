@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -56,8 +58,14 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
 
         findViewById(R.id.saveActivityButton).setOnClickListener(this);
         findViewById(R.id.deleteActivityButton).setOnClickListener(this);
-//        activitiesButton = findViewById(R.id.activitiesButton);
-//
+        saveActivityButton = findViewById(R.id.saveActivityButton);
+        deleteActivityButton = findViewById(R.id.deleteActivityButton);
+
+
+        editActivityName.addTextChangedListener(activityTextWatcher);
+        editActivityPlace.addTextChangedListener(activityTextWatcher);
+        editActivityDate.addTextChangedListener(activityTextWatcher);
+        editActivityTime.addTextChangedListener(activityTextWatcher);
         // get values from previous page
         editActivityName.setText(getIntent().getStringExtra("activityName"));
         editActivityPlace.setText(getIntent().getStringExtra("activityPlace"));
@@ -137,5 +145,27 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         intent.putExtra("pathToTripDoc", pathToTripDoc);
         startActivity(intent);
     }
+
+    private TextWatcher activityTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String name = editActivityName.getText().toString().trim();
+            String place = editActivityPlace.getText().toString().trim();
+            String date = editActivityDate.getText().toString().trim();
+            String time = editActivityTime.getText().toString().trim();
+
+            saveActivityButton.setEnabled(!name.isEmpty() && !place.isEmpty() && !date.isEmpty() && !time.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 
 }

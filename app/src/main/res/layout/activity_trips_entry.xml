@@ -155,6 +155,7 @@
         android:layout_marginLeft="16dp">
 
         <Button
+            android:enabled="false"
             android:id="@+id/addButton"
             android:layout_width="300dp"
             android:layout_height="55dp"
