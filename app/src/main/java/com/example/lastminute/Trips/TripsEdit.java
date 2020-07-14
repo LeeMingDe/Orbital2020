@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -49,6 +51,8 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
         editTripDestination = findViewById(R.id.editTripDestinationInput);
         editStartDate = findViewById(R.id.editStartDateInput);
         editEndDate = findViewById(R.id.editEndDateInput);
+        saveButton = findViewById(R.id.saveButton);
+        deleteButton = findViewById(R.id.deleteButton);
 
         findViewById(R.id.saveButton).setOnClickListener(this);
         findViewById(R.id.deleteButton).setOnClickListener(this);
@@ -59,6 +63,11 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
         editTripDestination.setText(getIntent().getStringExtra("tripPlace"));
         editStartDate.setText(getIntent().getStringExtra("startDate"));
         editEndDate.setText(getIntent().getStringExtra("endDate"));
+
+        editTripName.addTextChangedListener(tripTextWatcher);
+        editTripDestination.addTextChangedListener(tripTextWatcher);
+        editStartDate.addTextChangedListener(tripTextWatcher);
+        editEndDate.addTextChangedListener(tripTextWatcher);
 
         String pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
         d = db.document(pathToTripDoc);
@@ -131,5 +140,27 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
         intent.putExtra("TripsPage", true);
         startActivity(intent);
     }
+
+    private TextWatcher tripTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String name = editTripName.getText().toString().trim();
+            String place = editTripDestination.getText().toString().trim();
+            String startDate = editStartDate.getText().toString().trim();
+            String endDate = editEndDate.getText().toString().trim();
+
+            saveButton.setEnabled(!name.isEmpty() &&  !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 
 }

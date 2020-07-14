@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.example.lastminute.MainActivity;
 import com.example.lastminute.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,6 +28,7 @@ import java.util.Locale;
 public class TripsEntry extends AppCompatActivity {
     private Button addButton, cancelButton;
     private EditText addTripNameInput, addTripPlaceInput, addStartDateInput, addEndDateInput;
+//    private TextInputLayout addTripNameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,17 @@ public class TripsEntry extends AppCompatActivity {
     }
 
     private void setUpUIView() {
-        addTripNameInput = (EditText) findViewById(R.id.addTripNameInput);
+        addTripNameInput =  (EditText) findViewById(R.id.addTripNameInput);
         addTripPlaceInput = (EditText) findViewById(R.id.addTripPlaceInput);
         addStartDateInput = (EditText) findViewById(R.id.addStartDateInput);
         addEndDateInput = (EditText) findViewById(R.id.addEndDateInput);
         addEndDateInput = (EditText) findViewById(R.id.addEndDateInput);
         addButton = (Button) findViewById(R.id.addButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
+        addTripNameInput.addTextChangedListener(tripTextWatcher);
+        addTripPlaceInput.addTextChangedListener(tripTextWatcher);
+        addStartDateInput.addTextChangedListener(tripTextWatcher);
+        addEndDateInput.addTextChangedListener(tripTextWatcher);
 
     }
 
@@ -97,4 +105,26 @@ public class TripsEntry extends AppCompatActivity {
         intent.putExtra("TripsPage", true);
         startActivity(intent);
     }
+
+    private TextWatcher tripTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String name = addTripNameInput.getText().toString().trim();
+            String place = addTripPlaceInput.getText().toString().trim();
+            String startDate = addStartDateInput.getText().toString().trim();
+            String endDate = addEndDateInput.getText().toString().trim();
+
+            addButton.setEnabled(!name.isEmpty() &&  !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }
