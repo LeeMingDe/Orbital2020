@@ -18,4 +18,13 @@ public class UserProfile {
     public String getUserName() {
         return userName;
     }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
 }
