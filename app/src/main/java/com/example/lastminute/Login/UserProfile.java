@@ -5,12 +5,10 @@ package com.example.lastminute.Login;
 public class UserProfile {
     private String userEmail;
     private String userName;
-    private String password;
 
-    public UserProfile(String userEmail, String userName, String password) {
+    public UserProfile(String userEmail, String userName) {
         this.userEmail = userEmail;
         this.userName = userName;
-        this.userName = password;
     }
 
     public String getUserEmail() {
@@ -21,10 +19,6 @@ public class UserProfile {
         return userName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
@@ -33,7 +27,4 @@ public class UserProfile {
         this.userName = userName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
