@@ -85,7 +85,8 @@ public class SettingsFragment extends Fragment {
         general.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), General.class);
+                startActivity(intent);
             }
         });
     }
@@ -122,7 +123,8 @@ public class SettingsFragment extends Fragment {
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), Help.class);
+                startActivity(intent);
             }
         });
     }

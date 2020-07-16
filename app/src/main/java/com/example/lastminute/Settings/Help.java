@@ -4,19 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.lastminute.Diary.DiaryEntry;
+import com.example.lastminute.Diary.ViewDiaryEntry;
+import com.example.lastminute.MainActivity;
 import com.example.lastminute.R;
 
-public class Notification extends AppCompatActivity {
+public class Help extends AppCompatActivity {
     Toolbar settingsToolbar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_help);
         setUpUIView();
         customizeToolbar();
     }
@@ -28,7 +31,7 @@ public class Notification extends AppCompatActivity {
 
     private void customizeToolbar() {
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setTitle("NOTIFICATION");
+        getSupportActionBar().setTitle("HELP");
         settingsToolbar.setTitleTextColor(getResources().getColor(R.color.diaryColor));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         settingsToolbar.setTitleTextAppearance(this, R.style.gillsan_condensed);
