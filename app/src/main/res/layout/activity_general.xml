@@ -13,4 +13,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="655dp"
+        android:divider="@drawable/linear_layout_divider"
+        android:orientation="vertical"
+        android:showDividers="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsToolbar">
+
+        <TextView
+            android:id="@+id/changeUsername"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:text="Change Username"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/changeEmail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:text="Change Email"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/changePassword"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:text="Change Password"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

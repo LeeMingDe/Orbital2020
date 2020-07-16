@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/actor</item>
+        <item>@font/adamina</item>
         <item>@font/aldrich</item>
         <item>@font/alfa_slab_one</item>
         <item>@font/amarante</item>
@@ -9,6 +10,7 @@
         <item>@font/belgrano</item>
         <item>@font/capriola</item>
         <item>@font/cousine_bold</item>
+        <item>@font/montserrat</item>
         <item>@font/open_sans_bold</item>
         <item>@font/open_sans_extrabold</item>
         <item>@font/oswald_bold</item>
