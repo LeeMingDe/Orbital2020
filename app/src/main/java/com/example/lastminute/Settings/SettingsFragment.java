@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -95,8 +96,9 @@ public class SettingsFragment extends Fragment {
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Notification.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), Notification.class);
+//                startActivity(intent);
+                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -105,7 +107,7 @@ public class SettingsFragment extends Fragment {
         security.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -114,7 +116,7 @@ public class SettingsFragment extends Fragment {
         data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
             }
         });
     }
