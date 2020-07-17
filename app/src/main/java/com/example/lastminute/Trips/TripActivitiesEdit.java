@@ -45,11 +45,15 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setUpUIView();
+        getPath();
+        addTextWatcher();
+        getDataFromActivity();
+
+    }
+
+    private void setUpUIView() {
         setContentView(R.layout.activity_trip_activities_edit);
-        String pathToActivityDoc = getIntent().getStringExtra("pathToActivityDoc");
-//        pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
-        dr = db.document(pathToActivityDoc);
-        pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
         editActivityName = findViewById(R.id.editActivityNameInput);
         editActivityPlace = findViewById(R.id.editActivityPlaceInput);
         editActivityDate = findViewById(R.id.editActivityDateInput);
@@ -61,12 +65,22 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         saveActivityButton = findViewById(R.id.saveActivityButton);
         deleteActivityButton = findViewById(R.id.deleteActivityButton);
 
+    }
 
+    private void getPath() {
+        String pathToActivityDoc = getIntent().getStringExtra("pathToActivityDoc");
+        dr = db.document(pathToActivityDoc);
+        pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
+    }
+
+    public void addTextWatcher() {
         editActivityName.addTextChangedListener(activityTextWatcher);
         editActivityPlace.addTextChangedListener(activityTextWatcher);
         editActivityDate.addTextChangedListener(activityTextWatcher);
         editActivityTime.addTextChangedListener(activityTextWatcher);
-        // get values from previous page
+    }
+
+    public void getDataFromActivity() {
         editActivityName.setText(getIntent().getStringExtra("activityName"));
         editActivityPlace.setText(getIntent().getStringExtra("activityPlace"));
         editActivityDate.setText(getIntent().getStringExtra("activityDate"));
@@ -74,8 +88,7 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         editActivityDescription.setText(getIntent().getStringExtra("activityDescription"));
     }
 
-
-    private void deleteProduct() {
+    private void deleteActivity() {
         dr.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -90,7 +103,7 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         });
     }
 
-    private void updateProduct() {
+    private void updateActivity() {
         String activityName = editActivityName.getText().toString().trim();
         String activityPlace = editActivityPlace.getText().toString().trim();
         String activityDate = editActivityDate.getText().toString().trim();
@@ -119,7 +132,7 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteProduct();
+                        deleteActivity();
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -133,7 +146,7 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
                 ad.show();
                 break;
             case (R.id.saveActivityButton):
-                updateProduct();
+                updateActivity();
                 break;
         }
 

@@ -10,4 +10,5 @@
     <color name="diaryColor">#12B4FF</color>
     <color name="translucent">#B3FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="secondaryDiaryColor">#6612B4FF</color>
 </resources>

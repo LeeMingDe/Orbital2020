@@ -42,8 +42,10 @@
         <activity
             android:name=".Maps.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Trips.TripActivitiesEdit" />
-        <activity android:name=".Trips.TripActivitiesEntry" />
+        <activity android:name=".Trips.TripActivitiesEdit"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Trips.TripActivitiesEntry"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".Trips.TripActivities" />
         <activity android:name=".Trips.TripsEdit" />
         <activity android:name=".Trips.TripsEntry" />

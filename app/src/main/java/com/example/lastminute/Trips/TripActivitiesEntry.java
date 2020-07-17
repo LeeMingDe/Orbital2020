@@ -34,16 +34,15 @@ public class TripActivitiesEntry extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip_activities_entry);
-        pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
-        dr = db.document(pathToTripDoc);
         setUpUIView();
+        getPathToTrip();
         cancelledEntry();
         doneEntry();
         editEntry();
     }
 
     private void setUpUIView() {
+        setContentView(R.layout.activity_trip_activities_entry);
         addActivityNameInput = (EditText) findViewById(R.id.addActivityNameInput);
         addActivityPlaceInput = (EditText) findViewById(R.id.addActivityPlaceInput);
         addActivityDateInput = (EditText) findViewById(R.id.addActivityDateInput);
@@ -57,6 +56,11 @@ public class TripActivitiesEntry extends AppCompatActivity {
         addActivityDateInput.addTextChangedListener(activityTextWatcher);
         addActivityTimeInput.addTextChangedListener(activityTextWatcher);
 
+    }
+
+    private void getPathToTrip() {
+        pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
+        dr = db.document(pathToTripDoc);
     }
 
     private void cancelledEntry() {

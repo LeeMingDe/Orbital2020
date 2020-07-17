@@ -33,7 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class    TripsEdit extends AppCompatActivity implements OnClickListener {
+public class TripsEdit extends AppCompatActivity implements OnClickListener {
 
     EditText editTripName, editTripDestination, editStartDate, editEndDate;
     Button saveButton, deleteButton;
@@ -45,37 +45,41 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trips_edit);
+        setUpUIView();
+        addTextWatcher();
+        getDataFromTrip();
 
+    }
+
+    private void setUpUIView() {
+        setContentView(R.layout.activity_trips_edit);
         editTripName = findViewById(R.id.editTripNameInput);
         editTripDestination = findViewById(R.id.editTripDestinationInput);
         editStartDate = findViewById(R.id.editStartDateInput);
         editEndDate = findViewById(R.id.editEndDateInput);
         saveButton = findViewById(R.id.saveButton);
         deleteButton = findViewById(R.id.deleteButton);
-
         findViewById(R.id.saveButton).setOnClickListener(this);
         findViewById(R.id.deleteButton).setOnClickListener(this);
-//        activitiesButton = findViewById(R.id.activitiesButton);
-//
-        // get values from previous page
+    }
+
+    private void getDataFromTrip() {
         editTripName.setText(getIntent().getStringExtra("tripName"));
         editTripDestination.setText(getIntent().getStringExtra("tripPlace"));
         editStartDate.setText(getIntent().getStringExtra("startDate"));
         editEndDate.setText(getIntent().getStringExtra("endDate"));
+        String pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
+        d = db.document(pathToTripDoc);
+    }
 
+    private void addTextWatcher() {
         editTripName.addTextChangedListener(tripTextWatcher);
         editTripDestination.addTextChangedListener(tripTextWatcher);
         editStartDate.addTextChangedListener(tripTextWatcher);
         editEndDate.addTextChangedListener(tripTextWatcher);
-
-        String pathToTripDoc = getIntent().getStringExtra("pathToTripDoc");
-        d = db.document(pathToTripDoc);
-
     }
 
-
-    private void deleteProduct() {
+    private void deleteTrip() {
         d.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -88,7 +92,7 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
         });
     }
 
-    private void updateProduct() {
+    private void updateTrip() {
         String tripName = editTripName.getText().toString().trim();
         String tripPlace = editTripDestination.getText().toString().trim();
         String startDate = editStartDate.getText().toString().trim();
@@ -114,7 +118,7 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteProduct();
+                        deleteTrip();
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -128,7 +132,7 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
                 ad.show();
                 break;
             case (R.id.saveButton):
-                updateProduct();
+                updateTrip();
                 break;
         }
 
@@ -154,7 +158,7 @@ public class    TripsEdit extends AppCompatActivity implements OnClickListener {
             String startDate = editStartDate.getText().toString().trim();
             String endDate = editEndDate.getText().toString().trim();
 
-            saveButton.setEnabled(!name.isEmpty() &&  !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
+            saveButton.setEnabled(!name.isEmpty() && !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
         }
 
         @Override
