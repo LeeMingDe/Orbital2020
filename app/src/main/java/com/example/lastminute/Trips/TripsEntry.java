@@ -28,13 +28,13 @@ import java.util.Locale;
 public class TripsEntry extends AppCompatActivity {
     private Button addButton, cancelButton;
     private EditText addTripNameInput, addTripPlaceInput, addStartDateInput, addEndDateInput;
-//    private TextInputLayout addTripNameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trips_entry);
         setUpUIView();
+        addTextWatcher();
         cancelledEntry();
         doneEntry();
         editEntry();
@@ -48,11 +48,13 @@ public class TripsEntry extends AppCompatActivity {
         addEndDateInput = (EditText) findViewById(R.id.addEndDateInput);
         addButton = (Button) findViewById(R.id.addButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
+    }
+
+    private void addTextWatcher() {
         addTripNameInput.addTextChangedListener(tripTextWatcher);
         addTripPlaceInput.addTextChangedListener(tripTextWatcher);
         addStartDateInput.addTextChangedListener(tripTextWatcher);
         addEndDateInput.addTextChangedListener(tripTextWatcher);
-
     }
 
     private void cancelledEntry() {
@@ -119,7 +121,7 @@ public class TripsEntry extends AppCompatActivity {
             String startDate = addStartDateInput.getText().toString().trim();
             String endDate = addEndDateInput.getText().toString().trim();
 
-            addButton.setEnabled(!name.isEmpty() &&  !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
+            addButton.setEnabled(!name.isEmpty() && !place.isEmpty() && !startDate.isEmpty() && !endDate.isEmpty());
         }
 
         @Override

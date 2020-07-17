@@ -160,7 +160,7 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/tripsinputbackground"
+            android:background="@drawable/trips_button"
             android:layout_gravity="center"
             android:text="SAVE"
             android:textColor="#FFF">
@@ -172,10 +172,10 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/tripsinputbackground"
+            android:background="@drawable/trips_button_secondary"
             android:layout_gravity="center"
             android:text="DELETE"
-            android:textColor="#FFF">
+            android:textColor="@color/diaryColor">
 
         </Button>
 

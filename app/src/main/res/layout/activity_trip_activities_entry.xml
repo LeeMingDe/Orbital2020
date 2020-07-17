@@ -178,9 +178,8 @@
                 <EditText
                     android:id="@+id/addActivityDescriptionInput"
                     android:inputType="textMultiLine"
-                    android:hint="Description"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                 </EditText>
 
@@ -202,7 +201,7 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/tripsinputbackground"
+            android:background="@drawable/trips_button"
             android:layout_gravity="center"
             android:text="ADD"
             android:textColor="#FFF">
@@ -214,10 +213,10 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/tripsinputbackground"
+            android:background="@drawable/trips_button_secondary"
             android:layout_gravity="center"
             android:text="CANCEL"
-            android:textColor="#FFF">
+            android:textColor="@color/diaryColor">
 
         </Button>
 

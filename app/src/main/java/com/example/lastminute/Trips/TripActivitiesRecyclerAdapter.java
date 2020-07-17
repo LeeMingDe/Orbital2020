@@ -21,7 +21,6 @@ import java.util.Collections;
 public class TripActivitiesRecyclerAdapter extends FirestoreRecyclerAdapter<TripActivitiesDetails, TripActivitiesRecyclerAdapter.TripActivitiesViewHolder> {
     private TripActivitiesListener tripActivitiesListener;
 
-
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
@@ -90,5 +89,3 @@ public class TripActivitiesRecyclerAdapter extends FirestoreRecyclerAdapter<Trip
         void handleEditTripActivities(DocumentSnapshot snapshot, View v);
     }
 }
-
-

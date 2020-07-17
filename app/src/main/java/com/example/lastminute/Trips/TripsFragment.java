@@ -53,12 +53,8 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
     private  FloatingActionButton addTripsButton;
     private RecyclerView trips_recycler;
     TripsEntryRecyclerAdapter addTripsAdapter;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    DocumentReference dr;
-    Query q;
     private static final String TAG = "TripsFragment";
     FirebaseUser u;
-
 
     @Nullable
     @Override
@@ -71,27 +67,7 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
         LinearLayoutManager llm = new LinearLayoutManager(this.getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         trips_recycler.setLayoutManager(llm);
-
-        String deletedItem = null;
-
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                switch (direction) {
-                    case ItemTouchHelper.LEFT:
-                    case ItemTouchHelper.RIGHT:
-                        addTripsAdapter.deleteItem(viewHolder.getAdapterPosition());
-                        Toast.makeText(getActivity(), "Trip Deleted", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-
-            }
-        }).attachToRecyclerView(trips_recycler);
+        recyclerViewActions();
 
         return v;
     }
@@ -128,9 +104,9 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
     public void onStop() { // remove authStateListener
         super.onStop();
         FirebaseAuth.getInstance().removeAuthStateListener(this);
-        if (addTripsAdapter != null) {
-            addTripsAdapter.stopListening();
-        }
+//        if (addTripsAdapter != null) {
+//            addTripsAdapter.stopListening();
+//        }
     }
 
     private void initializeRecyclerView(FirebaseUser user) {
@@ -152,6 +128,27 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
         DividerItemDecoration divider = new DividerItemDecoration(getActivity(),
                 DividerItemDecoration.VERTICAL);
         trips_recycler.addItemDecoration(divider);
+    }
+
+    private void recyclerViewActions() {
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                switch (direction) {
+                    case ItemTouchHelper.LEFT:
+                    case ItemTouchHelper.RIGHT:
+                        addTripsAdapter.deleteItem(viewHolder.getAdapterPosition());
+                        Toast.makeText(getActivity(), "Trip Deleted", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
+            }
+        }).attachToRecyclerView(trips_recycler);
     }
 
     @Override
@@ -186,7 +183,6 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
         final String tripPlace = tripEntryDetails.getTripPlace().toString();
         final String startDate = tripEntryDetails.getStartDate().toString();
         final String endDate = tripEntryDetails.getEndDate().toString();
-        final ArrayList<String> activities = new ArrayList<>();
         FirebaseFirestore.getInstance()
                 .document(snapshot.getReference().getPath()).collection("Activities")
                 .whereEqualTo("userID", u.getUid())

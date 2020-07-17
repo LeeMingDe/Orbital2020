@@ -128,7 +128,7 @@ public class TripsEntryRecyclerAdapter extends FirestoreRecyclerAdapter<TripEntr
                     return true;
 
                 default:
-                    return  false;
+                    return false;
             }
         }
     }
