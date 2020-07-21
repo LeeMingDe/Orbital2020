@@ -4,15 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.lastminute.R;
@@ -29,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +48,7 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference dr;
     String pathToTripDoc;
+    int h, min;
 
 
     @Override
@@ -49,6 +58,8 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         getPath();
         addTextWatcher();
         getDataFromActivity();
+        openDatePicker();
+        openTimePicker();
 
     }
 
@@ -64,7 +75,81 @@ public class TripActivitiesEdit extends AppCompatActivity implements OnClickList
         findViewById(R.id.deleteActivityButton).setOnClickListener(this);
         saveActivityButton = findViewById(R.id.saveActivityButton);
         deleteActivityButton = findViewById(R.id.deleteActivityButton);
+        editActivityDate.setInputType(InputType.TYPE_NULL);
+        editActivityTime.setInputType(InputType.TYPE_NULL);
 
+    }
+
+    private void openDatePicker() {
+        editActivityDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int currentYear = c.get(Calendar.YEAR);
+                int currentMonth = c.get(Calendar.MONTH);
+                int currentDay = c.get(Calendar.DAY_OF_MONTH);
+//                updatedYear = currentYear;
+//                updateMonth = currentMonth;
+//                updatedDay = currentDay;
+
+                DatePickerDialog startDatePickerDialog = new DatePickerDialog(
+                        TripActivitiesEdit.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Calendar c = Calendar.getInstance();
+                                c.set(Calendar.YEAR, year);
+                                c.set(Calendar.MONTH, month);
+                                c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                String date = java.text.DateFormat.getDateInstance(java.text.DateFormat.FULL).format(c.getTime());
+//                                updatedYear = year;
+//                                updateMonth = month;
+//                                updatedDay = dayOfMonth;
+                                editActivityDate.setText(date);
+                            }
+                        },
+                        currentYear, currentMonth, currentDay);
+//                startDatePickerDialog.getDatePicker().updateDate(updatedYear, updateMonth, updatedDay);
+//                startDatePickerDialog.getDatePicker().init(updatedYear, updateMonth, updatedDay,null);
+                startDatePickerDialog.show();
+            }
+        });
+    }
+
+    private void openTimePicker() {
+        editActivityTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(
+                        TripActivitiesEdit.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                h = hourOfDay;
+                                min = minute;
+                                String time = "";
+                                if (hourOfDay < 10) {
+                                    time += "0"+ hourOfDay;
+                                } else {
+                                    time += hourOfDay;
+                                }
+                                time += ":";
+                                if (minute < 10) {
+                                    time += "0"+ minute;
+                                } else {
+                                    time += minute;
+                                }
+                                editActivityTime.setText(time);
+                            }
+                        }, 12, 0, false
+                );
+                timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                timePickerDialog.updateTime(h, min);
+                timePickerDialog.show();
+            }
+        });
     }
 
     private void getPath() {

@@ -30,10 +30,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 /**
@@ -109,7 +112,7 @@ public class InternationalRates extends Fragment {
 
             }
         });
-        textChanged();
+//        textChanged();
         return v;
     }
 
@@ -133,7 +136,7 @@ public class InternationalRates extends Fragment {
                     outputs[i].setText("" + Math.round(value * 100.0) / 100.0);
                 }
             }
-
+            textChanged();
         }
 
         @Override
@@ -157,22 +160,25 @@ public class InternationalRates extends Fragment {
             return result;
         }
 
-        public String getJSON(String url) throws ClientProtocolException, IOException {
+        public String getJSON(String uri) throws ClientProtocolException, IOException {
+            StringBuilder stringBuilder = new StringBuilder();
+            URL url = new URL(uri);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            try {
+                InputStream input = new BufferedInputStream(urlConnection.getInputStream());
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                String temp;
 
-            StringBuilder build = new StringBuilder();
-            HttpClient client = new DefaultHttpClient();
-            HttpGet httpGet = new HttpGet(url);
-            HttpResponse response = client.execute(httpGet);
-            HttpEntity entity = response.getEntity();
-            InputStream content = entity.getContent();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-            String con;
-
-            while ((con = reader.readLine()) != null) {
-                build.append(con);
+                while ((temp = reader.readLine()) != null) {
+                    stringBuilder.append(temp);
+                }
+            } finally {
+                // regardless success or failure, we will disconnect
+                urlConnection.disconnect();
             }
-            return build.toString();
+            return stringBuilder.toString();
         }
+
     }
 
     private void textChanged() {
@@ -189,12 +195,20 @@ public class InternationalRates extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
+                String amount = currencyInput.getText().toString();
                 try {
-                    String amount = currencyInput.getText().toString();
                     amountToConvert = Double.parseDouble(amount);
-                    new Calculator().execute();
-                } catch (Exception e) {
-                    e.printStackTrace();
+                } catch (NumberFormatException e) {
+                    amountToConvert = 0.0;
+                }
+                int index = spinnerIndex;
+                for (int i = 0; i < 33; i++) {
+                    if (i == index) {
+                        outputs[i].setText("" + Math.round(amountToConvert * 100.0) / 100.0);
+                    } else {
+                        double value = Double.parseDouble(result[i]) * amountToConvert;
+                        outputs[i].setText("" + Math.round(value * 100.0) / 100.0);
+                    }
                 }
             }
         });

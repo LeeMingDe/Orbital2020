@@ -108,10 +108,15 @@
 
         <EditText
             android:id="@+id/editStartDateInput"
-            android:inputType="date"
-            android:hint="22/05/2020"
+            android:inputType="none"
+            android:hint="Sunday, May 31, 2020"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false">
 
         </EditText>
 
@@ -138,10 +143,15 @@
 
         <EditText
             android:id="@+id/editEndDateInput"
-            android:inputType="date"
-            android:hint="31/05/2020"
+            android:inputType="none"
+            android:hint="Sunday, May 31, 2020"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false">
 
         </EditText>
 

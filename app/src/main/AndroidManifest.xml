@@ -20,7 +20,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Settings.Help"></activity>
+        <activity
+            android:name=".Settings.AboutCurrencyConverter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Settings.AboutMaps"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Settings.AboutDiary"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Settings.AboutTrips"
+            android:label="@string/title_activity_about_trips"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Settings.AboutLastMinute"
+            android:label="@string/title_activity_about_last_minute"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Settings.Help" />
         <activity android:name=".Settings.Notification" />
         <activity android:name=".Settings.General" />
         <!--
@@ -42,10 +59,12 @@
         <activity
             android:name=".Maps.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Trips.TripActivitiesEdit"
+        <activity
+            android:name=".Trips.TripActivitiesEdit"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".Trips.TripActivitiesEntry"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".Trips.TripActivitiesEntry"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Trips.TripActivities" />
         <activity android:name=".Trips.TripsEdit" />
         <activity android:name=".Trips.TripsEntry" />

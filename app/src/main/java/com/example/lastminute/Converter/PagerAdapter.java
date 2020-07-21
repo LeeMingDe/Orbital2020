@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.lastminute.Converter.InternationalRates;
+
 public class PagerAdapter extends FragmentPagerAdapter {
     final int numberOfTabs = 2;
     private String[] tabTitles = new String[]{"International", "Personal"};

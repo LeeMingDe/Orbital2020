@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="20dp"
-        android:background="?attr/selectableItemBackground">
+    android:layout_height="145dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginBottom="0dp"
+    app:cardBackgroundColor="#FFF"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,8 +24,8 @@
                 android:id="@+id/tripName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Graduation Trip"
@@ -34,14 +35,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/tripPlace"
                 android:layout_width="320dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Korea"
                 android:textColor="#000000"
@@ -57,63 +60,113 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="From:"
+                    android:textColor="@color/diaryColor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/startDate"
+                    app:layout_constraintTop_toBottomOf="@+id/tripPlace"
+                    android:textStyle="bold"/>
+
+
+                <TextView
                     android:id="@+id/startDate"
-                    android:layout_width="85dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="sans-serif-light"
-                    android:text="22/05/2020"
+                    android:text="22 September, 2020"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tripPlace" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="sans-serif-light"
-                    android:text="to"
+                    android:text="To:     "
                     android:textColor="@color/diaryColor"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/startDate"
-                    app:layout_constraintTop_toBottomOf="@+id/tripPlace" />
+                    app:layout_constraintTop_toBottomOf="@+id/tripPlace"
+                    android:textStyle="bold"/>
+
 
                 <TextView
                     android:id="@+id/endDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="sans-serif-light"
-                    android:text="31/05/2020"
+                    android:text="22 May, 2020"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/to"
                     app:layout_constraintTop_toBottomOf="@+id/tripPlace" />
 
+
             </LinearLayout>
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--                -->
+            <!--                <TextView-->
+            <!--                    android:id="@+id/to"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="8dp"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:fontFamily="sans-serif-light"-->
+            <!--                    android:text="to"-->
+            <!--                    android:textColor="@color/diaryColor"-->
+            <!--                    android:textSize="16sp"-->
+            <!--                    app:layout_constraintStart_toEndOf="@+id/startDate"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/tripPlace" />-->
+
+            <!--                -->
+
+            <!--            </LinearLayout>-->
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/moreButton"
+            android:id="@+id/moreTripButton"
             android:layout_width="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
             android:src="@drawable/ic_more_vert_black_24dp"
-            android:background="?attr/selectableItemBackground">
+            android:elevation="0dp"
+            app:elevation="0dp">
+
         </androidx.appcompat.widget.AppCompatImageButton>
 
     </LinearLayout>
 
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
 
 

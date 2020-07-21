@@ -4,14 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,6 +33,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +53,7 @@ public class TripsEdit extends AppCompatActivity implements OnClickListener {
         setUpUIView();
         addTextWatcher();
         getDataFromTrip();
-
+        openDatePicker();
     }
 
     private void setUpUIView() {
@@ -61,6 +66,81 @@ public class TripsEdit extends AppCompatActivity implements OnClickListener {
         deleteButton = findViewById(R.id.deleteButton);
         findViewById(R.id.saveButton).setOnClickListener(this);
         findViewById(R.id.deleteButton).setOnClickListener(this);
+        editStartDate.setInputType(InputType.TYPE_NULL);
+        editEndDate.setInputType(InputType.TYPE_NULL);
+    }
+
+    private void openDatePicker() {
+        editStartDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int currentYear = c.get(Calendar.YEAR);
+                int currentMonth = c.get(Calendar.MONTH);
+                int currentDay = c.get(Calendar.DAY_OF_MONTH);
+//                updatedYear = currentYear;
+//                updateMonth = currentMonth;
+//                updatedDay = currentDay;
+
+                DatePickerDialog startDatePickerDialog = new DatePickerDialog(
+                        TripsEdit.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Calendar c = Calendar.getInstance();
+                                c.set(Calendar.YEAR, year);
+                                c.set(Calendar.MONTH, month);
+                                c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                String date = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+//                                updatedYear = year;
+//                                updateMonth = month;
+//                                updatedDay = dayOfMonth;
+                                editStartDate.setText(date);
+                            }
+                        },
+                        currentYear, currentMonth, currentDay);
+//                startDatePickerDialog.getDatePicker().updateDate(updatedYear, updateMonth, updatedDay);
+//                startDatePickerDialog.getDatePicker().init(updatedYear, updateMonth, updatedDay,null);
+                startDatePickerDialog.show();
+            }
+        });
+
+        editEndDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int currentYear = c.get(Calendar.YEAR);
+                int currentMonth = c.get(Calendar.MONTH);
+                int currentDay = c.get(Calendar.DAY_OF_MONTH);
+//                updatedYear = currentYear;
+//                updateMonth = currentMonth;
+//                updatedDay = currentDay;
+
+                DatePickerDialog endDatePickerDialog = new DatePickerDialog(
+                        TripsEdit.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Calendar c = Calendar.getInstance();
+                                c.set(Calendar.YEAR, year);
+                                c.set(Calendar.MONTH, month);
+                                c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                String date = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+//                                updatedYear = year;
+//                                updateMonth = month;
+//                                updatedDay = dayOfMonth;
+                                editEndDate.setText(date);
+                            }
+                        },
+                        currentYear, currentMonth, currentDay);
+//                startDatePickerDialog.getDatePicker().updateDate(updatedYear, updateMonth, updatedDay);
+//                startDatePickerDialog.getDatePicker().init(updatedYear, updateMonth, updatedDay,null);
+                endDatePickerDialog.show();
+            }
+        });
+
     }
 
     private void getDataFromTrip() {
