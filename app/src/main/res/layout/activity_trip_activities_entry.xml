@@ -27,7 +27,7 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="370dp"
         android:layout_marginBottom="5dp">
 
         <LinearLayout
@@ -116,10 +116,15 @@
 
                 <EditText
                     android:id="@+id/addActivityDateInput"
-                    android:inputType="date"
-                    android:hint="22/05"
+                    android:inputType="none"
+                    android:hint="Sunday, May 22, 2020"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="false">
 
                 </EditText>
 
@@ -147,10 +152,15 @@
 
                 <EditText
                     android:id="@+id/addActivityTimeInput"
-                    android:inputType="time"
+                    android:inputType="none"
                     android:hint="12:30"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="false">
 
                 </EditText>
 
@@ -168,7 +178,7 @@
                     android:id="@+id/addActivityDescription"
                     android:textSize="18sp"
                     android:textColor="@color/diaryColor"
-                    android:text="Description:"
+                    android:text="Details:"
                     android:layout_marginBottom="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -179,7 +189,8 @@
                     android:id="@+id/addActivityDescriptionInput"
                     android:inputType="textMultiLine"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:hint="Details">
 
                 </EditText>
 

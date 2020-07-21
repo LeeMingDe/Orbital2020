@@ -2,12 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/popup_edit"
+        android:id="@+id/popup_activity_edit"
         android:title="Edit" />
     <item
-        android:id="@+id/popup_delete"
+        android:id="@+id/popup_activity_delete"
         android:title="Delete" />
-    <item
-        android:id="@+id/popup_share"
-        android:title="Share" />
+
 </menu>

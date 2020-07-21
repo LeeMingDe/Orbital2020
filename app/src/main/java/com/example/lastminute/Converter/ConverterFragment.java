@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.lastminute.Converter.InternationalRates;
 import com.example.lastminute.R;
 import com.google.android.material.tabs.TabLayout;
 

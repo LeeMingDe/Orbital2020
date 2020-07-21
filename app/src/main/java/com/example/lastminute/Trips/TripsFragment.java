@@ -186,10 +186,10 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
         FirebaseFirestore.getInstance()
                 .document(snapshot.getReference().getPath()).collection("Activities")
                 .whereEqualTo("userID", u.getUid())
-                .orderBy("activityDate", Query.Direction.ASCENDING)
-                .orderBy("activityTime", Query.Direction.ASCENDING)
-                .orderBy("activityName", Query.Direction.ASCENDING)
-                .orderBy("activityPlace", Query.Direction.ASCENDING)
+//                .orderBy("activityDate", Query.Direction.ASCENDING)
+//                .orderBy("activityTime", Query.Direction.ASCENDING)
+//                .orderBy("activityName", Query.Direction.ASCENDING)
+//                .orderBy("activityPlace", Query.Direction.ASCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -201,16 +201,23 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
                             shareBody.append("TRIP DETAILS\n")
                                     .append("Trip Name: " + tripName + "\n")
                                     .append("Destination: " + tripPlace + "\n")
-                                    .append("Duration: " + startDate + " to " + endDate + "\n\n");
-                            shareBody.append("ACTIVITIES\n");
+                                    .append("Duration: " + startDate + " to " + endDate);
+                            if (task.getResult().size() != 0) {
+                                shareBody.append("\n\nACTIVITIES\n");
+                            }
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String,Object> activity = document.getData();
                                 String activityName = activity.get("activityName").toString();
                                 String activityPlace = activity.get("activityPlace").toString();
                                 String activityDate = activity.get("activityDate").toString();
                                 String activityTime = activity.get("activityTime").toString();
+                                String activityDescription = activity.get("activityDescription").toString();
                                 shareBody.append(activityDate + " " + activityTime + " - " + activityName + " at " + activityPlace + "\n");
+                                if (activityDescription != "") {
+                                    shareBody.append("Details: " + activityDescription + "\n");
+                                }
                             }
+                            shareBody.deleteCharAt(shareBody.length() - 1);
                             Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("text/plain");
                             intent.putExtra(Intent.EXTRA_TEXT, shareBody.toString());

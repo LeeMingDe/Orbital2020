@@ -43,31 +43,6 @@ public class PersonalRates extends Fragment {
         toOutput.setText("" + Math.round(result * 100.0) / 100.0);
     }
 
-//    private void textChanged() {
-//        fromInput.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                try {
-//                    String amount = fromInput.getText().toString();
-//                    amountToConvert = Double.parseDouble(amount);
-//                    calculateRate(amountToConvert);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//    }
-
     private TextWatcher generalTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -81,15 +56,19 @@ public class PersonalRates extends Fragment {
 
         @Override
         public void afterTextChanged(Editable s) {
+            String amount = fromInput.getText().toString();
+            String r = rateInput.getText().toString();
             try {
-                String amount = fromInput.getText().toString();
                 amountToConvert = Double.parseDouble(amount);
-                String r = rateInput.getText().toString();
-                rate = Double.parseDouble(r);
-                calculateRate(amountToConvert, rate);
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (NumberFormatException e) {
+                amountToConvert = 0.0;
             }
+            try {
+                rate = Double.parseDouble(r);
+            } catch (NumberFormatException e) {
+                rate = 0.0;
+            }
+            calculateRate(amountToConvert, rate);
         }
     };
 

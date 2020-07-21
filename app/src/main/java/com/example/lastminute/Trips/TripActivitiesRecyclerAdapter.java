@@ -2,11 +2,14 @@ package com.example.lastminute.Trips;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lastminute.R;
@@ -55,14 +58,16 @@ public class TripActivitiesRecyclerAdapter extends FirestoreRecyclerAdapter<Trip
         getSnapshots().getSnapshot(position).getReference().delete();
     }
 
-    class TripActivitiesViewHolder extends RecyclerView.ViewHolder {
+    class TripActivitiesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
         private TextView activityName, activityPlace, activityDate, activityTime;
+        private ImageButton moreButton;
 
         public TripActivitiesViewHolder(@NonNull View itemView) {
             super(itemView);
             setUpUIView(itemView);
             EditTripActivities(itemView);
+            openPopup(itemView);
         }
 
         private void setUpUIView(View itemView) {
@@ -70,6 +75,7 @@ public class TripActivitiesRecyclerAdapter extends FirestoreRecyclerAdapter<Trip
             activityPlace = (TextView) itemView.findViewById(R.id.activityPlace);
             activityDate = (TextView) itemView.findViewById(R.id.activityDate);
             activityTime = (TextView) itemView.findViewById(R.id.activityTime);
+            moreButton = (ImageButton) itemView.findViewById(R.id.moreActivityButton);
         }
 
         private void EditTripActivities(View itemView) {
@@ -83,6 +89,36 @@ public class TripActivitiesRecyclerAdapter extends FirestoreRecyclerAdapter<Trip
             });
         }
 
+        private void openPopup(View itemView) {
+            moreButton.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            showPopup(v);
+        }
+
+        private void showPopup(View v) {
+            PopupMenu popupMenu = new PopupMenu(itemView.getContext(), v);
+            popupMenu.inflate(R.menu.activity_more_menu);
+            popupMenu.setOnMenuItemClickListener(this);
+            popupMenu.show();
+        }
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.popup_activity_edit:
+                    DocumentSnapshot snapshotEdit = getSnapshots().getSnapshot(getAdapterPosition());
+                    tripActivitiesListener.handleEditTripActivities(snapshotEdit, itemView);
+                    return true;
+                case R.id.popup_activity_delete:
+                    deleteItem(getAdapterPosition());
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 
     public interface TripActivitiesListener {

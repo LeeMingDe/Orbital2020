@@ -1,7 +1,9 @@
 package com.example.lastminute.Trips;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -29,6 +32,8 @@ import com.example.lastminute.Trips.TripActivitiesEdit;
 import com.example.lastminute.Trips.TripActivitiesEntry;
 import com.example.lastminute.Trips.TripActivitiesRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,20 +44,33 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Map;
+import java.util.Objects;
 
 public class TripActivities extends AppCompatActivity implements FirebaseAuth.AuthStateListener, TripActivitiesRecyclerAdapter.TripActivitiesListener {
 
     private  FloatingActionButton addActivitiesButton;
     private RecyclerView activities_recycler;
     TripActivitiesRecyclerAdapter addActivitiesAdapter;
+//    testAdapter testAdapter;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference dr;
     String pathToTripDoc;
+    private static final String TAG = "TripActivities: ";
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -114,13 +132,50 @@ public class TripActivities extends AppCompatActivity implements FirebaseAuth.Au
 //        }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void initializeRecyclerView(FirebaseUser user) {
+        final ArrayList<TripActivitiesDetails> activities = new ArrayList<>();
         Query query = FirebaseFirestore.getInstance().collection("Trips").document(dr.getId()).collection("Activities")
-                .whereEqualTo("userID", user.getUid())
-                .orderBy("activityDate", Query.Direction.ASCENDING)
-                .orderBy("activityTime", Query.Direction.ASCENDING)
-                .orderBy("activityName", Query.Direction.ASCENDING)
-                .orderBy("activityPlace", Query.Direction.ASCENDING);
+//                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                Map<String, Object> activity = document.getData();
+//                                String activityName = activity.get("activityName").toString();
+//                                String activityPlace = activity.get("activityPlace").toString();
+//                                String activityDate = activity.get("activityDate").toString();
+//                                String activityTime = activity.get("activityTime").toString();
+//                                String activityDescription = activity.get("activityDescription").toString();
+//                                TripActivitiesDetails a = new TripActivitiesDetails(activityName, activityPlace, activityDate, activityTime, activityDescription, FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                                activities.add(a);
+//                            }
+//                        } else {
+//                            Log.d(TAG, "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//        activities.sort(new Comparator<TripActivitiesDetails>() {
+//            @Override
+//            public int compare(TripActivitiesDetails o1, TripActivitiesDetails o2) {
+//                String stringDate1 = o1.getActivityDate();
+//                String stringDate2 = o2.getActivityDate();
+//                SimpleDateFormat input = new SimpleDateFormat("EEEE, MMMM d, yyyy");
+//                SimpleDateFormat output = new SimpleDateFormat("yyyyMMdd");
+//                try {
+//                    String newDate1 = output.format((input.parse(stringDate1)));
+//                    String newDate2 = output.format((input.parse(stringDate2)));
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+//                return -1;
+//            }
+//        });
+                .whereEqualTo("userID", user.getUid());
+//                .orderBy("activityDate", Query.Direction.ASCENDING)
+//                .orderBy("activityTime", Query.Direction.ASCENDING)
+//                .orderBy("activityName", Query.Direction.ASCENDING)
+//                .orderBy("activityPlace", Query.Direction.ASCENDING);
         FirestoreRecyclerOptions<TripActivitiesDetails> options =
                 new FirestoreRecyclerOptions.Builder<TripActivitiesDetails>()
                         .setQuery(query, TripActivitiesDetails.class)
@@ -128,7 +183,10 @@ public class TripActivities extends AppCompatActivity implements FirebaseAuth.Au
         addActivitiesAdapter = new TripActivitiesRecyclerAdapter(options, this);
         activities_recycler.setAdapter(addActivitiesAdapter);
         addActivitiesAdapter.startListening();
+//        testAdapter = new testAdapter(activities);
+//        activities_recycler.setAdapter(testAdapter);
     }
+
 
     private void addDividerInRecyclerView() { // margin between each each item
         DividerItemDecoration divider = new DividerItemDecoration(TripActivities.this,

@@ -1,17 +1,27 @@
 package com.example.lastminute.Trips;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 
+import com.example.lastminute.MainActivity;
 import com.example.lastminute.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Timestamp;
@@ -19,7 +29,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -30,6 +44,7 @@ public class TripActivitiesEntry extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference dr;
     String pathToTripDoc;
+    int h, min;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +54,8 @@ public class TripActivitiesEntry extends AppCompatActivity {
         cancelledEntry();
         doneEntry();
         editEntry();
+        openDatePicker();
+        openTimePicker();
     }
 
     private void setUpUIView() {
@@ -55,7 +72,81 @@ public class TripActivitiesEntry extends AppCompatActivity {
         addActivityPlaceInput.addTextChangedListener(activityTextWatcher);
         addActivityDateInput.addTextChangedListener(activityTextWatcher);
         addActivityTimeInput.addTextChangedListener(activityTextWatcher);
+        addActivityDateInput.setInputType(InputType.TYPE_NULL);
+        addActivityTimeInput.setInputType(InputType.TYPE_NULL);
 
+    }
+
+    private void openDatePicker() {
+        addActivityDateInput.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int currentYear = c.get(Calendar.YEAR);
+                int currentMonth = c.get(Calendar.MONTH);
+                int currentDay = c.get(Calendar.DAY_OF_MONTH);
+//                updatedYear = currentYear;
+//                updateMonth = currentMonth;
+//                updatedDay = currentDay;
+
+                DatePickerDialog startDatePickerDialog = new DatePickerDialog(
+                        TripActivitiesEntry.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Calendar c = Calendar.getInstance();
+                                c.set(Calendar.YEAR, year);
+                                c.set(Calendar.MONTH, month);
+                                c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                String date = java.text.DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+//                                updatedYear = year;
+//                                updateMonth = month;
+//                                updatedDay = dayOfMonth;
+                                addActivityDateInput.setText(date);
+                            }
+                        },
+                        currentYear, currentMonth, currentDay);
+//                startDatePickerDialog.getDatePicker().updateDate(updatedYear, updateMonth, updatedDay);
+//                startDatePickerDialog.getDatePicker().init(updatedYear, updateMonth, updatedDay,null);
+                startDatePickerDialog.show();
+            }
+        });
+    }
+
+    private void openTimePicker() {
+        addActivityTimeInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(
+                        TripActivitiesEntry.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                h = hourOfDay;
+                                min = minute;
+                                String time = "";
+                                if (hourOfDay < 10) {
+                                    time += "0"+ hourOfDay;
+                                } else {
+                                    time += hourOfDay;
+                                }
+                                time += ":";
+                                if (minute < 10) {
+                                    time += "0"+ minute;
+                                } else {
+                                    time += minute;
+                                }
+                                addActivityTimeInput.setText(time);
+                            }
+                        }, 12, 0, false
+                );
+                timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                timePickerDialog.updateTime(h, min);
+                timePickerDialog.show();
+            }
+        });
     }
 
     private void getPathToTrip() {

@@ -74,8 +74,7 @@ public class TripsEntryRecyclerAdapter extends FirestoreRecyclerAdapter<TripEntr
             tripPlace = (TextView) itemView.findViewById(R.id.tripPlace);
             startDate = (TextView) itemView.findViewById(R.id.startDate);
             endDate = (TextView) itemView.findViewById(R.id.endDate);
-            endDate = (TextView) itemView.findViewById(R.id.endDate);
-            moreButton = (ImageButton) itemView.findViewById(R.id.moreButton);
+            moreButton = (ImageButton) itemView.findViewById(R.id.moreTripButton);
         }
 
         private void EditTripEntry(View itemView) {
@@ -121,6 +120,9 @@ public class TripsEntryRecyclerAdapter extends FirestoreRecyclerAdapter<TripEntr
                 case R.id.popup_edit:
                     DocumentSnapshot snapshotEdit = getSnapshots().getSnapshot(getAdapterPosition());
                     tripListener.handleEditTrip(snapshotEdit, itemView);
+                    return true;
+                case R.id.popup_delete:
+                    deleteItem(getAdapterPosition());
                     return true;
                 case R.id.popup_share:
                     DocumentSnapshot snapshotShare = getSnapshots().getSnapshot(getAdapterPosition());
