@@ -37,6 +37,8 @@
             android:name=".Settings.AboutLastMinute"
             android:label="@string/title_activity_about_last_minute"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".Settings.Security"></activity>
         <activity android:name=".Settings.Help" />
         <activity android:name=".Settings.Notification" />
         <activity android:name=".Settings.General" />
@@ -85,6 +87,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".Settings.AlarmReceiver" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

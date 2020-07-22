@@ -12,4 +12,9 @@
     <color name="black">#000000</color>
     <color name="secondaryDiaryColor">#6612B4FF</color>
     <color name="black_overlay">#66000000</color>
+
+    <!-- Switch color -->
+    <color name="disabled_track_grey">#dcdcdc</color>
+    <color name="disabled_thumb_grey">#e9e9e9</color>
+    <color name="enable_track_blue">#2a9df4</color>
 </resources>

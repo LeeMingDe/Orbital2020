@@ -38,7 +38,7 @@ public class SettingsFragment extends Fragment {
         toGeneralPage();
         toNotificationPage();
         toSecurityPage();
-        toDataPage();
+//        toDataPage();
         toHelpPage();
         return v;
     }
@@ -96,9 +96,8 @@ public class SettingsFragment extends Fragment {
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), Notification.class);
-//                startActivity(intent);
-                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Notification.class);
+                startActivity(intent);
             }
         });
     }
@@ -107,19 +106,20 @@ public class SettingsFragment extends Fragment {
         security.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Security.class);
+                startActivity(intent);
             }
         });
     }
 
-    private void toDataPage() {
-        data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void toDataPage() {
+//        data.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getActivity(), "COMING SOON", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     private void toHelpPage() {
         help.setOnClickListener(new View.OnClickListener() {

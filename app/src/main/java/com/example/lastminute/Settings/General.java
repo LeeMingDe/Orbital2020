@@ -39,7 +39,6 @@ public class General extends AppCompatActivity {
         customizeToolbar();
         onClickUsername();
         onClickEmail();
-        onClickPassword();
     }
 
     private void setUpUIView() {
@@ -51,7 +50,7 @@ public class General extends AppCompatActivity {
 
     private void customizeToolbar() {
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setTitle("GENERAL");
+        getSupportActionBar().setTitle("General");
         settingsToolbar.setTitleTextColor(getResources().getColor(R.color.diaryColor));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         settingsToolbar.setTitleTextAppearance(this, R.style.gillsan_condensed);
@@ -172,75 +171,5 @@ public class General extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    private void changePassword(String oldPassword, final String newPassword) {
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        // Get auth credentials from the user for re-authentication. The example below shows
-        // email and password credentials but there are multiple possible providers,
-        // such as GoogleAuthProvider or FacebookAuthProvider.
-                AuthCredential credential = EmailAuthProvider
-                        .getCredential(user.getEmail(), oldPassword);
-
-        // Prompt the user to re-provide their sign-in credentials
-        user.reauthenticate(credential)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(General.this, "Password Changed"
-                                                , Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(General.this, "Password Change failed"
-                                                , Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                        } else {
-                            Toast.makeText(General.this, "Wrong Password"
-                                    , Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
-    private void onClickPassword() {
-        changePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(General.this);
-                LayoutInflater inflater = getLayoutInflater();
-                final View alertDialogView = inflater.inflate(R.layout.change_password,null);
-                builder.setView(alertDialogView)
-                        .setPositiveButton("Change", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                EditText oldPassword = (EditText) alertDialogView.findViewById(R.id.oldPassword);
-                                EditText newPassword = (EditText) alertDialogView.findViewById(R.id.newPassword);
-                                changePassword(oldPassword.getText().toString(),
-                                        newPassword.getText().toString());
-                            }
-                        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(General.this, "Cancelled", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Button btnPositive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                Button btnNegative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) btnPositive.getLayoutParams();
-                layoutParams.weight = 10;
-                btnPositive.setLayoutParams(layoutParams);
-                btnNegative.setLayoutParams(layoutParams);
-            }
-        });
-
     }
 }

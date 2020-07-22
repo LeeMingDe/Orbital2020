@@ -44,7 +44,7 @@
                 android:id="@+id/accountEmail"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="96dp"
+                android:layout_marginBottom="120dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text=""
@@ -61,9 +61,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="358dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="300dp"
         android:layout_marginBottom="55dp"
         android:background="@color/colorWhite"
         android:elevation="2dp"
@@ -134,6 +135,7 @@
             android:paddingStart="20dp"
             android:text="Data"
             android:textColor="#000000"
+            android:visibility="gone"
             android:textSize="18sp" />
 
         <TextView

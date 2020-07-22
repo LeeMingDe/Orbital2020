@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lastminute.Login.LoginPage;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class PasswordRecovery extends AppCompatActivity {
     private EditText passwordEmail;
+    private TextView backToLogin;
     private Button resetPassword;
     private FirebaseAuth firebaseAuth;
 
@@ -28,6 +30,7 @@ public class PasswordRecovery extends AppCompatActivity {
         setUpUIView();
         firebaseAuth = FirebaseAuth.getInstance();
         passwordReset();
+        backToLogin();
     }
 
     /**
@@ -36,6 +39,7 @@ public class PasswordRecovery extends AppCompatActivity {
     private void setUpUIView() {
         passwordEmail = (EditText) findViewById(R.id.passwordEmail);
         resetPassword = (Button) findViewById(R.id.resetPassword);
+        backToLogin = (TextView) findViewById(R.id.backToLogin);
     }
 
     /**
@@ -75,6 +79,15 @@ public class PasswordRecovery extends AppCompatActivity {
                     Toast.makeText(PasswordRecovery.this, "Error in sending password reset email"
                             , Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void backToLogin() {
+        backToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

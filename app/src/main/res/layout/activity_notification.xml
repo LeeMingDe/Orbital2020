@@ -13,4 +13,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/notificationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingsToolbar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/enableNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:padding="20dp"
+            android:text="Enable Notification and Reminder"
+            android:textColorHighlight="@color/diaryColor"
+            android:textColorLink="#4D88FF"
+            android:textSize="16sp"
+            android:theme="@style/notificationSwitch"
+            android:thumbTint="#FFFFFF"
+            tools:layout_editor_absoluteY="72dp" />
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Day \nDaily"
+            android:textColor="#d3d3d3"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/selectTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Time \n8.00pm"
+            android:textColor="#d3d3d3"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

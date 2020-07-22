@@ -10,13 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.lastminute.Converter.ConverterFragment;
-import com.example.lastminute.Diary.DiaryEntry;
-import com.example.lastminute.Diary.ViewDiaryEntry;
-import com.example.lastminute.MainActivity;
 import com.example.lastminute.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Help extends AppCompatActivity {
