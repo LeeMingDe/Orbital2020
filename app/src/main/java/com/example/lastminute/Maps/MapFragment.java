@@ -184,7 +184,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             @Override
             public void onClick(View v) {
                 List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS, Place.Field.LAT_LNG
-                , Place.Field.NAME/*, Place.Field.RATING, Place.Field.PHOTO_METADATAS*/);
+                , Place.Field.NAME, Place.Field.RATING, Place.Field.PHOTO_METADATAS);
                 LatLng latLngCurrent = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList)
                         .setInitialQuery(inputSearch.getText().toString())
@@ -352,7 +352,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         moveCam(DEFAULT_ZOOM, pointOfInterest);
         String placeID = pointOfInterest.placeId;
         List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS, Place.Field.LAT_LNG
-                , Place.Field.NAME/*, Place.Field.RATING, Place.Field.PHOTO_METADATAS*/);
+                , Place.Field.NAME, Place.Field.RATING, Place.Field.PHOTO_METADATAS);
         FetchPlaceRequest placeRequest = FetchPlaceRequest.newInstance(placeID, fieldList);
         placesClient.fetchPlace(placeRequest).addOnSuccessListener(new OnSuccessListener<FetchPlaceResponse>() {
             @Override
@@ -473,7 +473,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
      */
 
     private void setBottomSheet(Place place) {
-        double ratingNum = 0;
+        double ratingNum = 1;
         placePicker.setVisibility(View.GONE);
         try {
             ratingNum = place.getRating();
@@ -572,7 +572,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     private void getCurrentPlaceLikelihoods() {
         // Use fields to define the data types to return.
         List<Place.Field> placeFields = Arrays.asList(Place.Field.NAME, Place.Field.ADDRESS,
-                Place.Field.LAT_LNG/*, Place.Field.RATING, Place.Field.PHOTO_METADATAS*/);
+                Place.Field.LAT_LNG, Place.Field.RATING/*, Place.Field.PHOTO_METADATAS*/);
 
         // Get the likely places - that is, the businesses and other points of interest that
         // are the best match for the device's current location.
@@ -602,11 +602,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
                             for (PlaceLikelihood placeLikelihood : response.getPlaceLikelihoods()) {
                                 Place currPlace = placeLikelihood.getPlace();
-//                                try {
-//                                    mLikelyPlaceRatings[i] = currPlace.getRating();
-//                                } catch (NullPointerException e) {
+                                try {
+                                    mLikelyPlaceRatings[i] = currPlace.getRating();
+                                } catch (NullPointerException e) {
                                     mLikelyPlaceRatings[i] = 0;
-//                                }
+                                }
 //                                retrieveGoogleImage(currPlace, i);
                                 mLikelyPlaceNames[i] = currPlace.getName();
                                 mLikelyPlaceAddresses[i] = currPlace.getAddress();
