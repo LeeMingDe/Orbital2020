@@ -31,7 +31,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         String channelId = "my_channel_id";
         CharSequence channelName = "My Channel";
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
-        NotificationChannel notificationChannel = new NotificationChannel(channelId,             channelName, importance);
+        NotificationChannel notificationChannel = new NotificationChannel(channelId,
+                channelName, importance);
         notificationChannel.enableLights(true);
         notificationChannel.setLightColor(Color.RED);
         notificationChannel.enableVibration(true);
@@ -48,7 +49,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(
-                context).setSmallIcon(R.drawable.ic_add_black_24dp)
+                context).setSmallIcon(R.mipmap.app_icon_round)
                 .setContentTitle("Alarm Fired")
                 .setContentText("Forgot to write an entry?").setSound(alarmSound)
                 .setAutoCancel(true).setWhen(when)
