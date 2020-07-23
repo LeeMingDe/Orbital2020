@@ -34,7 +34,8 @@
                     android:layout_marginBottom="10dp"
                     android:text="Rate:"
                     android:textColor="@android:color/secondary_text_light"
-                    android:textSize="20sp">
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light">
 
                 </TextView>
 
@@ -49,7 +50,8 @@
                     android:inputType="numberDecimal"
                     android:textAlignment="textEnd"
                     app:autoFill="true"
-                    app:autoSave="true">
+                    app:autoSave="true"
+                    android:fontFamily="sans-serif-light">
 
                 </cn.zhaiyifan.rememberedittext.RememberEditText>
 
@@ -69,7 +71,8 @@
                     android:layout_marginBottom="20dp"
                     android:text="From:"
                     android:textColor="@android:color/secondary_text_light"
-                    android:textSize="20sp">
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light">
 
                 </TextView>
 
@@ -81,7 +84,8 @@
                     android:hint="22.22"
                     android:layout_marginRight="20dp"
                     android:inputType="numberDecimal"
-                    android:textAlignment="textEnd">
+                    android:textAlignment="textEnd"
+                    android:fontFamily="sans-serif-light">
 
                 </EditText>
 
@@ -100,7 +104,8 @@
                     android:layout_marginBottom="20dp"
                     android:text="To:"
                     android:textColor="@android:color/secondary_text_light"
-                    android:textSize="20sp">
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light">
 
                 </TextView>
 
@@ -109,13 +114,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:hint="0"
-                    android:text="0"
+                    android:hint="0.0"
+                    android:text="0.0"
                     android:layout_marginRight="20dp"
                     android:inputType="numberDecimal"
                     android:textAlignment="textEnd"
                     android:textColor="@android:color/secondary_text_light"
-                    android:textSize="24sp">
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-light">
 
                 </TextView>
 

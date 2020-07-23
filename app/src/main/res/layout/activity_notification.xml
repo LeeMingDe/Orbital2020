@@ -30,11 +30,12 @@
             android:id="@+id/enableNotification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="sans-serif-light"
             android:padding="20dp"
             android:text="Enable Notification and Reminder"
             android:textColorHighlight="@color/diaryColor"
             android:textColorLink="#4D88FF"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:theme="@style/notificationSwitch"
             android:thumbTint="#FFFFFF"
@@ -49,7 +50,8 @@
             android:padding="20dp"
             android:text="Day \nDaily"
             android:textColor="#d3d3d3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"/>
 
         <TextView
             android:id="@+id/selectTime"
@@ -60,7 +62,8 @@
             android:padding="20dp"
             android:text="Time \n8.00pm"
             android:textColor="#d3d3d3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"/>
 
 
     </LinearLayout>

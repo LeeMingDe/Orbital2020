@@ -9,7 +9,6 @@
         android:scaleType="center"
         android:background="@color/diaryColor"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
         android:gravity="center"
         android:textSize="20sp"
         android:text="Change Username"/>

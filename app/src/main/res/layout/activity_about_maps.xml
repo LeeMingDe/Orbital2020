@@ -40,7 +40,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -51,10 +52,9 @@
                 android:text="At the Maps function, users can search for locations of their desired destinations through a built-in Google map. Users can also view Google reviews of the location and check out nearby recommendations."
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -68,7 +68,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -79,10 +80,9 @@
                 android:text="Users can search for their destinations or drop a pin on the location on the map. Upon clicking on the navigation button, they will directed to the Google Maps application on their device for navigation."
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 

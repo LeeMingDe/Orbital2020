@@ -53,7 +53,7 @@ public class General extends AppCompatActivity {
         getSupportActionBar().setTitle("General");
         settingsToolbar.setTitleTextColor(getResources().getColor(R.color.diaryColor));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        settingsToolbar.setTitleTextAppearance(this, R.style.gillsan_condensed);
+        settingsToolbar.setTitleTextAppearance(this, R.style.roboto_medium);
     }
 
     @Override

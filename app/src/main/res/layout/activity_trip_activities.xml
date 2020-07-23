@@ -76,7 +76,8 @@
         android:text="No more activities"
         android:textAlignment="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular">
 
     </TextView>
 

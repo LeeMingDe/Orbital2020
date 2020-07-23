@@ -38,7 +38,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                android:fontFamily="sans-serif-light"/>
 
             <TextView
                 android:id="@+id/accountEmail"
@@ -54,7 +55,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="sans-serif-light"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -82,7 +84,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/general_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="General"
@@ -98,7 +100,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/notification_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="Notification &amp; Reminder"
@@ -114,7 +116,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/security_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="Security"
@@ -130,7 +132,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/data_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="Data"
@@ -147,7 +149,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/help_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="Help"
@@ -163,7 +165,7 @@
             android:clickable="true"
             android:drawableLeft="@drawable/logout_icon"
             android:drawablePadding="15dp"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="Log Out"
