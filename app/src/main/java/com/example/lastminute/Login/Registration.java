@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +38,7 @@ public class Registration extends AppCompatActivity {
 		firebaseAuth = FirebaseAuth.getInstance();
 		registerPerson();
 		goBackLogin();
+		addTextWatcher();
 	}
 
 	/**
@@ -158,5 +161,32 @@ public class Registration extends AppCompatActivity {
 		com.example.lastminute.Login.UserProfile userProfile = new com.example.lastminute.Login.UserProfile(email, name);
 		myRef.setValue(userProfile);
 	}
+
+	private void addTextWatcher() {
+		registerName.addTextChangedListener(registerTextWatcher);
+		registerPassword.addTextChangedListener(registerTextWatcher);
+		registerEmail.addTextChangedListener(registerTextWatcher);
+	}
+
+	private TextWatcher registerTextWatcher = new TextWatcher() {
+		@Override
+		public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+		}
+
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before, int count) {
+			String name = registerName.getText().toString().trim();
+			String password = registerPassword.getText().toString().trim();
+			String email = registerEmail.getText().toString().trim();
+
+			registerButton.setEnabled(!name.isEmpty() && !email.isEmpty() && !password.isEmpty());
+		}
+
+		@Override
+		public void afterTextChanged(Editable s) {
+
+		}
+	};
 
 }

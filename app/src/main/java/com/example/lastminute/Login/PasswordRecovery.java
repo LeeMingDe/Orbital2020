@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,7 @@ public class PasswordRecovery extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         passwordReset();
         backToLogin();
+        addTextWatcher();
     }
 
     /**
@@ -91,4 +94,27 @@ public class PasswordRecovery extends AppCompatActivity {
             }
         });
     }
+
+    private void addTextWatcher() {
+        passwordEmail.addTextChangedListener(recoveryTextWatcher);
+    }
+
+    private TextWatcher recoveryTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String pe = passwordEmail.getText().toString().trim();
+
+            resetPassword.setEnabled(!pe.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }

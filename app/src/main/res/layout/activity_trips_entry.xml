@@ -165,13 +165,13 @@
         android:layout_marginLeft="16dp">
 
         <Button
-            android:enabled="false"
             android:id="@+id/addButton"
             android:layout_width="300dp"
             android:layout_height="55dp"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/trips_button"
-            android:layout_gravity="center"
+            android:enabled="false"
             android:text="ADD"
             android:textColor="#FFF">
 

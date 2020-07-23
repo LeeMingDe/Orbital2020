@@ -40,7 +40,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -51,10 +52,9 @@
                 android:text="At the Currency function, users can choose to convert their currencies base on live rates taken from the Euroupean Central Bank or key in their own personal rates which they have convert their currency from. "
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -68,7 +68,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -79,10 +80,9 @@
                 android:text="Users can use the spinner to view the different currencies to set as the base currency. There are a total of 33 currencies."
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -96,7 +96,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -104,13 +105,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif-light"
                 android:text="The currency conversions will take place as users key in their desired amount to convert."
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 

@@ -29,7 +29,8 @@
                 android:layout_width="100dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginRight="5dp"
+                android:fontFamily="sans-serif-light">
 
             </androidx.appcompat.widget.AppCompatSpinner>
 
@@ -40,7 +41,8 @@
                 android:layout_marginRight="15dp"
                 android:hint="Amount"
                 android:inputType="numberDecimal"
-                android:textAlignment="textEnd">
+                android:textAlignment="textEnd"
+                android:fontFamily="sans-serif-light">
 
             </EditText>
 
@@ -91,7 +93,8 @@
                         android:text="SGD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -107,7 +110,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -146,7 +150,8 @@
                         android:text="AUD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -162,7 +167,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -201,7 +207,8 @@
                         android:text="BGN"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -217,7 +224,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -256,7 +264,8 @@
                         android:text="BRL"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -272,7 +281,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -311,7 +321,8 @@
                         android:text="CAD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -327,7 +338,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -366,7 +378,8 @@
                         android:text="CHF"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -382,7 +395,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -421,7 +435,8 @@
                         android:text="CNY"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -437,7 +452,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -476,7 +492,8 @@
                         android:text="CZK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -492,7 +509,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -531,7 +549,8 @@
                         android:text="DKK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -547,7 +566,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -586,7 +606,8 @@
                         android:text="EUR"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -602,7 +623,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -641,7 +663,8 @@
                         android:text="GBP"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -657,7 +680,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -696,7 +720,8 @@
                         android:text="HKD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -712,7 +737,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -751,7 +777,8 @@
                         android:text="HRK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -767,7 +794,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -806,7 +834,8 @@
                         android:text="HUF"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -822,7 +851,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -861,7 +891,8 @@
                         android:text="IDR"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -877,7 +908,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -916,7 +948,8 @@
                         android:text="ILS"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -932,7 +965,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -971,7 +1005,8 @@
                         android:text="INR"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -987,7 +1022,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1026,7 +1062,8 @@
                         android:text="ISK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1042,7 +1079,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1081,7 +1119,8 @@
                         android:text="JPY"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1097,7 +1136,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1136,7 +1176,8 @@
                         android:text="KRW"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1152,7 +1193,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1191,7 +1233,8 @@
                         android:text="MXN"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1207,7 +1250,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1246,7 +1290,8 @@
                         android:text="MYR"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1262,7 +1307,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1301,7 +1347,8 @@
                         android:text="NOK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1317,7 +1364,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1356,7 +1404,8 @@
                         android:text="NZD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1372,7 +1421,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1411,7 +1461,8 @@
                         android:text="PHP"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1427,7 +1478,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1466,7 +1518,8 @@
                         android:text="PLN"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1482,7 +1535,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1521,7 +1575,8 @@
                         android:text="RON"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1537,7 +1592,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1576,7 +1632,8 @@
                         android:text="RUB"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1592,7 +1649,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1630,7 +1688,8 @@
                         android:text="SEK"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1646,7 +1705,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1685,7 +1745,8 @@
                         android:text="THB"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1701,7 +1762,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1740,7 +1802,8 @@
                         android:text="TRY"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1756,7 +1819,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1795,7 +1859,8 @@
                         android:text="USD"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1811,7 +1876,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1849,7 +1915,8 @@
                         android:text="ZAR"
                         android:textAlignment="center"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="24sp">
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 
@@ -1865,7 +1932,8 @@
                         android:text="0.0"
                         android:textAlignment="textEnd"
                         android:textColor="@android:color/secondary_text_light"
-                        android:textSize="28dp">
+                        android:textSize="28dp"
+                        android:fontFamily="sans-serif-light">
 
                     </TextView>
 

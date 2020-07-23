@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="#B3FFFFFF">
+        android:background="#FFF">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -47,7 +47,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabBackground="@color/translucent"
+        app:tabBackground="@color/colorWhite"
         app:tabIndicatorColor="@color/diaryColor"
         app:tabRippleColor="@color/diaryColor"
         app:tabSelectedTextColor="@color/diaryColor"
@@ -72,7 +72,8 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp">
 
     </androidx.viewpager.widget.ViewPager>
 

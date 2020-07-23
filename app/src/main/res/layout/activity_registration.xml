@@ -69,8 +69,9 @@
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/button_green"
-        android:backgroundTint="#67A84E"
+        android:background="@drawable/trips_button"
+        android:textColor="#FFF"
+        android:enabled="false"
         android:text="@string/register"
         app:layout_constraintBottom_toTopOf="@+id/loginPage"
         app:layout_constraintEnd_toEndOf="@+id/registerPassword"
@@ -92,14 +93,14 @@
         android:id="@+id/pageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/belgrano"
+        android:layout_marginTop="128dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/registration"
         android:textAlignment="center"
         android:textColor="#2E2E2E"
         android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

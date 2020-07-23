@@ -40,7 +40,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -51,10 +52,9 @@
                 android:text="At the Diary function, users can reflect on their travelling experiences and jot down their thoughts and attach photos that they have taken on their trips. "
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -68,7 +68,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -79,10 +80,9 @@
                 android:text="Users can click on the add button at the bottom-right hand corner of the app which will direct users to a new page. Users can then key in the diary title and contents."
                 android:textAlignment="textStart"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -96,7 +96,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -104,13 +105,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Upon creation of a diary entry, users can click on each entry to view the full diary entry. Users can then choose to edit/delete the entry from there."
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
 
@@ -124,7 +124,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/diaryColor"
-                android:textSize="18dp">
+                android:textSize="16dp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -132,12 +133,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Users can swipe left when viewing their diary entry to view their attached photos."
-                android:textColor="@color/black"
-                android:textSize="18dp">
+                android:textSize="16dp">
 
             </TextView>
         </LinearLayout>

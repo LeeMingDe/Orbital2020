@@ -73,10 +73,10 @@ public class Notification extends AppCompatActivity {
 
     private void customizeToolbar() {
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setTitle("Notification & Reminders");
+        getSupportActionBar().setTitle("Notifications & Reminders");
         settingsToolbar.setTitleTextColor(getResources().getColor(R.color.diaryColor));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        settingsToolbar.setTitleTextAppearance(this, R.style.gillsan_condensed);
+        settingsToolbar.setTitleTextAppearance(this, R.style.roboto_medium);
     }
 
     @Override

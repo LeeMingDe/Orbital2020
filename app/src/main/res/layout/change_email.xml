@@ -12,8 +12,7 @@
         android:scaleType="center"
         android:text="Change Email"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/newEmail"

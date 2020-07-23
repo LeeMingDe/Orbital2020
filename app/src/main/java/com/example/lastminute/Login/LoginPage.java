@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +39,7 @@ public class LoginPage extends AppCompatActivity {
         toRegistrationPage();
         toTripsFragmentPage();
         toPasswordRecoveryPage();
+        addTextWatcher();
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!= null) {
@@ -148,4 +151,29 @@ public class LoginPage extends AppCompatActivity {
             firebaseAuth.signOut();
         }
     }
+
+    private void addTextWatcher() {
+        email.addTextChangedListener(loginTextWatcher);
+        password.addTextChangedListener(loginTextWatcher);
+    }
+
+    private TextWatcher loginTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String e = email.getText().toString().trim();
+            String pw = password.getText().toString().trim();
+
+            login.setEnabled(!e.isEmpty() && !pw.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }

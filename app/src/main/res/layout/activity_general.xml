@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings.General">
+    tools:context=".Settings.General"
+    android:fontFamily="sans-serif-light">
 
     <include
         android:id="@+id/settingsToolbar"
@@ -31,11 +32,13 @@
             android:layout_height="60dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
-            android:paddingStart="30dp"
+            android:padding="20dp"
             android:text="Change Username"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textColorLink="#4D88FF"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/changeEmail"
@@ -43,11 +46,13 @@
             android:layout_height="60dp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="sans-serif-light"
             android:gravity="center_vertical"
-            android:paddingStart="30dp"
+            android:padding="20dp"
             android:text="Change Email"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textColorLink="#4D88FF"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
