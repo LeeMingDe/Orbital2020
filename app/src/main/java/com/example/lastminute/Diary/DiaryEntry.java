@@ -247,9 +247,11 @@ public class DiaryEntry extends AppCompatActivity implements View.OnTouchListene
 				Uri imageUri = data.getData();
 				imageNameList.add(imageUri);
 			}
+			Toast.makeText(DiaryEntry.this, "Swipe left to view photos", Toast.LENGTH_SHORT).show();
 		} else if (requestCode == CAPTURE_IMAGE_REQUEST && resultCode == RESULT_OK) {
 			File f = new File(currentPhotoPath);
 			imageNameList.add(Uri.fromFile(f));
+			Toast.makeText(DiaryEntry.this, "Swipe left to view photos", Toast.LENGTH_SHORT).show();
 		}
 	}
 
