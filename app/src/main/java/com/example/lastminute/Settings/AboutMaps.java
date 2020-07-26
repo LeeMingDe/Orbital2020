@@ -34,9 +34,4 @@ public class AboutMaps extends AppCompatActivity {
 //        finish();
     }
 
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(R.transition.slide_in_left,R.transition.slide_out_right);
-//    }
 }

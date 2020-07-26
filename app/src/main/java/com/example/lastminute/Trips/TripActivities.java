@@ -64,7 +64,6 @@ public class TripActivities extends AppCompatActivity implements FirebaseAuth.Au
     private  FloatingActionButton addActivitiesButton;
     private RecyclerView activities_recycler;
     TripActivitiesRecyclerAdapter addActivitiesAdapter;
-//    testAdapter testAdapter;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference dr;
     String pathToTripDoc;
