@@ -50,7 +50,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(
                 context).setSmallIcon(R.mipmap.app_icon_round)
-                .setContentTitle("Alarm Fired")
+                .setContentTitle("lastMinute")
                 .setContentText("Forgot to write an entry?").setSound(alarmSound)
                 .setAutoCancel(true).setWhen(when)
                 .setContentIntent(pendingIntent)
