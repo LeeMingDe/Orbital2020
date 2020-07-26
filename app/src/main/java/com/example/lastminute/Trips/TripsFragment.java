@@ -217,7 +217,9 @@ public class TripsFragment extends Fragment implements FirebaseAuth.AuthStateLis
                                     shareBody.append("Details: " + activityDescription + "\n");
                                 }
                             }
-                            shareBody.deleteCharAt(shareBody.length() - 1);
+                            if (task.getResult().size() > 0) {
+                                shareBody.deleteCharAt(shareBody.length() - 1);
+                            }
                             Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("text/plain");
                             intent.putExtra(Intent.EXTRA_TEXT, shareBody.toString());
