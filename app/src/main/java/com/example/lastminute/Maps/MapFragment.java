@@ -2,6 +2,7 @@ package com.example.lastminute.Maps;
 
 import android.Manifest;
 import android.animation.FloatEvaluator;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -225,7 +226,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         try {
             if (locationPermission) {
-                Task location = locationProviderClient.getLastLocation();
+                @SuppressLint("MissingPermission") Task location = locationProviderClient.getLastLocation();
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
@@ -250,7 +251,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         locationProviderClient = LocationServices.getFusedLocationProviderClient(getContext());
 
         try {
-            Task location = locationProviderClient.getLastLocation();
+            @SuppressLint("MissingPermission") Task location = locationProviderClient.getLastLocation();
             location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
@@ -325,6 +326,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(getContext());
@@ -578,7 +580,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         // are the best match for the device's current location.
          final FindCurrentPlaceRequest request =
                 FindCurrentPlaceRequest.builder(placeFields).build();
-        Task<FindCurrentPlaceResponse> placeResponse = placesClient.findCurrentPlace(request);
+        @SuppressLint("MissingPermission") Task<FindCurrentPlaceResponse> placeResponse = placesClient.findCurrentPlace(request);
         placeResponse.addOnCompleteListener(new OnCompleteListener<FindCurrentPlaceResponse>() {
                     @Override
                     public void onComplete(@NonNull Task<FindCurrentPlaceResponse> task) {
