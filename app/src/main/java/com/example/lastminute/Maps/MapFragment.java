@@ -620,6 +620,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                                 Log.d(TAG, String.format("Place " + currPlace.getName()
                                         + " has likelihood: " + placeLikelihood.getLikelihood()
                                         + " at " + currLatLng));
+                                Marker mMarker = gMap.addMarker(new MarkerOptions()
+                                        .title(mLikelyPlaceNames[i])
+                                        .position(mLikelyPlaceLatLngs[i])
+                                        .snippet(mLikelyPlaceAddresses[i]));
+                                mMarker.showInfoWindow();
 
                                 i++;
                                 if (i > (count - 1)) {
@@ -664,13 +669,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             if (mLikelyPlaceAttributions[position] != null) {
                 markerSnippet = markerSnippet + "\n" + mLikelyPlaceAttributions[position];
             }
-
-            // Add a marker for the selected place, with an info window
-            // showing information about that place.
-            gMap.addMarker(new MarkerOptions()
-                    .title(mLikelyPlaceNames[position])
-                    .position(markerLatLng)
-                    .snippet(markerSnippet));
 
             // Position the map's camera at the location of the marker.
             gMap.animateCamera(CameraUpdateFactory.newLatLng(markerLatLng));
