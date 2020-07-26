@@ -121,7 +121,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     private LatLng[] mLikelyPlaceLatLngs;
     private double[] mLikelyPlaceRatings;
     private Bitmap[] mLikelyPlacePhoto;
-    private static final int M_MAX_ENTRIES = 1;
+    private static final int M_MAX_ENTRIES = 5;
 
     private final static float DEFAULT_ZOOM = 15f;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
