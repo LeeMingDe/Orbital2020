@@ -25,7 +25,7 @@
 
     <!--Bottom Navigation Strings-->
     <string name="nav_trips_name">Trips</string>
-    <string name="nav_diary_name">Dairy</string>
+    <string name="nav_diary_name">Diary</string>
     <string name="nav_map_name">Map</string>
     <string name="nav_converter_name">Converter</string>
     <string name="nav_settings_name">Settings</string>
