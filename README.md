@@ -1,6 +1,6 @@
 # lastMinute
 
-# <h3> Scope of Project
+### <h3> Scope of Project
 
 Our application provides an all in one solution which can be used for travelling. The application will consist of 4 main functions. These functions are the trips function, diary function, map function and currency converter function.
 
@@ -16,9 +16,8 @@ A currency converter that allows users to view the exchange rates and calculate 
 
 
 
-# <h3>Program Flow
-
-![Flow diagram]()
+### <h3>Program Flow
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ProgramFlow.PNG" width="624" height="410"/>
 
 Description
 
