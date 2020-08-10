@@ -58,3 +58,54 @@ After logging in, there will be a bottom navigation menu for the user to navigat
 * Users can change their username, email or password.
 * Users can set a daily notification reminder to remind them to create a journal entry.
 * Users can look at faq on how to use the application.
+
+### <h3> UI Design
+Login Page:
+  
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/loginPage.png" width="167" height="338"/> <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/register.png" width="167" height="338"/> <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/PasswordRecovery.png" width="167" height="338"/>
+ 
+ <pre>   Login Page            Registration          Password Reset </pre>
+
+Trips Page:
+
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Trips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddTrips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Activities.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddActivities.png" width="167" height="338"/>
+
+ <pre>    Trips Page             Add Trip            Activities Page           Add Activity</pre>
+                        
+ 
+ 
+ Figure 2a.                                    Figure 2b.                                       Figure 2c.
+     (Trips Page)                                  (Add Trip)                                (Activities Page)
+
+
+             Figure 2d.
+        (Add Activity) 
+
+Diary page:
+
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Diary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddDiary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ViewDiary.png" width="167" height="338"/>
+
+ <pre>    Diary Page             Add entries            View entries</pre>
+
+                      
+            Figure 3a.                                        Figure 3b.                                     Figure 3c.
+          (Diary Page)                                    (Add entries)                                (View entries)
+
+Map Page:
+                        
+            Figure 4a.                                     Figure 4b.                                         Figure 4c.
+          (Map Page)                                     (Search)                                            (Places)
+
+Currency Converter Page:
+
+            
+             Figure 5a.                                      Figure 5b.                                
+      (International rates)                           (Personal rate)  
+Settings Page:
+                       
+            Figure 6a.                                       Figure 6b.                                     Figure 6c.
+       (Settings page)                                (General Page)                 (Notification Page)
+           
+              Figure 6d.                                    Figure 6e.
+         (Security Page)                               (Help Page)
+
