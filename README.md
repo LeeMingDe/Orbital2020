@@ -60,38 +60,39 @@ After logging in, there will be a bottom navigation menu for the user to navigat
 * Users can look at faq on how to use the application.
 
 ### <h3> UI Design
-Login Page:
+  
+**Login Page:**
   
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/loginPage.png" width="167" height="338"/> <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/register.png" width="167" height="338"/> <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/PasswordRecovery.png" width="167" height="338"/>
  
  <pre>   Login Page            Registration          Password Reset </pre>
 
-Trips Page:
+**Trips Page:**
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Trips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddTrips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Activities.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddActivities.png" width="167" height="338"/>
 
  <pre>    Trips Page             Add Trip            Activities Page           Add Activity</pre>
                      
-Diary page:
+**Diary page:**
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Diary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddDiary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ViewDiary.png" width="167" height="338"/>
 
  <pre>    Diary Page             Add entries            View entries</pre>
 
-Map Page:
+**Map Page:**
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Location.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/SearchMaps.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Navigate.png" width="167" height="338"/>
 
  <pre>     Map Page                 Search                 Places</pre>
                         
 
-Currency Converter Page:
+**Currency Converter Page:**
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/CurrencyConverter.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/PersonalRates.png" width="167" height="338"/>
 
  <pre>International rates      Personal rate</pre>
 
-Settings Page:
+**Settings Page:**
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Settings.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/General.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Notifications.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Security.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Help.png" width="167" height="338"/>
 
