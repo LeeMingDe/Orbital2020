@@ -94,9 +94,13 @@ After logging in, there will be a bottom navigation menu for the user to navigat
 
 **Settings Page:**
 
-<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Settings.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/General.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Notifications.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Security.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Help.png" width="167" height="338"/>
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Settings.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/General.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Notifications.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Security.png" width="167" height="338"/>
 
- <pre>   Settings page          General Page         Notification Page         Security Page          Help Page</pre>
+ <pre>   Settings page          General Page         Notification Page         Security Page</pre>
+ 
+ <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Help.png" width="167" height="338"/>
+   
+ <pre>    Help Page</pre>
                        
 ### <h3> Installation
   
