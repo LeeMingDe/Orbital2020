@@ -19,41 +19,42 @@ A currency converter that allows users to view the exchange rates and calculate 
 ### <h3>Program Flow
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ProgramFlow.PNG" width="624" height="410"/>
 
-Description
+**Description**
 
-Login:
+**Login:**
 
 Once users start up the application, they can choose to register with a username, email and password or login with an existing account. For users who forgot their password, they can choose the ”Forget Password” to reset their password using their email. 
 
 All user information is stored in the Firebase database.
 
-Main Page:
+**Main Page:**
 
 After logging in, there will be a bottom navigation menu for the user to navigate between different functions. 
 
-Trips page
-Users can build their itinerary by adding new trips and activities.
-Users can share their trips with others.
-Data stored in Firebase Firestore.
-Diary page
-Users can create new diary entries by keying in a title and their journal content.
-Users can attach photos from either media gallery or take a photo with their camera.
-Users can attach a location.
-Data stored in Firebase Firestore.
+**Trips page**
+* Users can build their itinerary by adding new trips and activities.
+* Users can share their trips with others.
+* Data stored in Firebase Firestore.
 
-Map page
-Users can see their location on the map.
-Users can get directions and route to the place that they want to go.
-Users can get ratings of some of the places around them.
-Implemented with Google Maps API.
+**Diary page**
+* Users can create new diary entries by keying in a title and their journal content.
+* Users can attach photos from either media gallery or take a photo with their camera.
+* Users can attach a location.
+* Data stored in Firebase Firestore.
 
-Currency Converter Page
-Users can use a spinner (drop-down option) to select the base currency (33 currencies to select from).
-Users can choose to input his/her own rate as well.
-Implemented with ratesapi.io (data based on the European Central Bank).
+**Map page**
+* Users can see their location on the map.
+* Users can get directions and route to the place that they want to go.
+* Users can get ratings of some of the places around them.
+* Implemented with Google Maps API.
 
-Settings page
-Users can choose to log out which will direct them back to the login page.
-Users can change their username, email or password.
-Users can set a daily notification reminder to remind them to create a journal entry.
-Users can look at faq on how to use the application.
+**Currency Converter Page**
+* Users can use a spinner (drop-down option) to select the base currency (33 currencies to select from).
+* Users can choose to input his/her own rate as well.
+* Implemented with ratesapi.io (data based on the European Central Bank).
+
+**Settings page**
+* Users can choose to log out which will direct them back to the login page.
+* Users can change their username, email or password.
+* Users can set a daily notification reminder to remind them to create a journal entry.
+* Users can look at faq on how to use the application.
