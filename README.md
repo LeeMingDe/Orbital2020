@@ -97,4 +97,31 @@ Settings Page:
 
  <pre>   Settings page          General Page         Notification Page         Security Page          Help Page</pre>
                        
+### <h3> Installation
+  
+  **Without Android phone:**
 
+1. Download and install Android Studio (Ensure that AVD device is ticked) https://developer.android.com/studio#downloads
+2. Open up Android Studio and choose the option “Get From Version Control” and paste in the URL https://github.com/LeeMingDe/Orbital2020.git and click clone
+3. Select the folder and click ok.
+4. Click on the “No Device” button that is to the left of the run button and select the option “Open up the AVD Manager”
+5. Create a virtual device with the phone category and pixel 3 as the device and click next.
+6. Download API 29.0 with the name Q. Click next and finish the creation of the device
+7. Now, just click on the run button to run our application. (It might take some time for the virtual device to load)
+
+(If unable to run the application, go to File -> Invalidate Caches/Restart and then try to run the application again)
+
+(If still unable to run the application, go to Build -> Rebuild Project)
+
+**With Android phone (API 28 and above):**
+
+1. Download the APK (https://www.dropbox.com/s/1d1j9jruqnfurt7/lastMinute.apk?dl=0)
+2. Transfer APK to phone
+3. Install our application and run it
+
+### Credits
+* Country Flags in Currency Converter by CountryFlags - https://www.countryflags.com/en/
+* All currency rates by RateApi - http://ratesapi.io/
+* Remember EditText dependency by Mark Zhai - https://github.com/markzhai/RememberEditText 
+* Icons in Settings page by Icons8 - https://icons8.com 
+* Reference of Animation Resource files in Settings help page by Coding in Flow - https://codinginflow.com/tutorials/android/slide-animation-between-activities 
