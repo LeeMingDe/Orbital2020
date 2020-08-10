@@ -17,7 +17,7 @@ A currency converter that allows users to view the exchange rates and calculate 
 
 
 ### <h3>Program Flow
-<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ProgramFlow.PNG" width="624" height="410"/>
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ProgramFlow.PNG" width="700" height="500"/>
 
 **Description**
 
