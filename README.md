@@ -71,41 +71,30 @@ Trips Page:
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Trips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddTrips.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Activities.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddActivities.png" width="167" height="338"/>
 
  <pre>    Trips Page             Add Trip            Activities Page           Add Activity</pre>
-                        
- 
- 
- Figure 2a.                                    Figure 2b.                                       Figure 2c.
-     (Trips Page)                                  (Add Trip)                                (Activities Page)
-
-
-             Figure 2d.
-        (Add Activity) 
-
+                     
 Diary page:
 
 <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Diary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/AddDiary.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/ViewDiary.png" width="167" height="338"/>
 
  <pre>    Diary Page             Add entries            View entries</pre>
 
-                      
-            Figure 3a.                                        Figure 3b.                                     Figure 3c.
-          (Diary Page)                                    (Add entries)                                (View entries)
-
 Map Page:
+
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Location.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/SearchMaps.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Navigate.png" width="167" height="338"/>
+
+ <pre>     Map Page                 Search                 Places</pre>
                         
-            Figure 4a.                                     Figure 4b.                                         Figure 4c.
-          (Map Page)                                     (Search)                                            (Places)
 
 Currency Converter Page:
 
-            
-             Figure 5a.                                      Figure 5b.                                
-      (International rates)                           (Personal rate)  
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/CurrencyConverter.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/PersonalRates.png" width="167" height="338"/>
+
+ <pre>International rates      Personal rate</pre>
+
 Settings Page:
+
+<img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Settings.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/General.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Notifications.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Security.png" width="167" height="338"/>  <img src="https://github.com/LeeMingDe/Orbital2020/blob/master/images/Help.png" width="167" height="338"/>
+
+ <pre>   Settings page          General Page         Notification Page         Security Page          Help Page</pre>
                        
-            Figure 6a.                                       Figure 6b.                                     Figure 6c.
-       (Settings page)                                (General Page)                 (Notification Page)
-           
-              Figure 6d.                                    Figure 6e.
-         (Security Page)                               (Help Page)
 
