@@ -230,7 +230,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if (task.isSuccessful()) {
+                        if (task.isSuccessful() & task.getResult() != null) {
                             mLocation = (Location) task.getResult();
                             Log.d(TAG, "onComplete: " + mLocation);
                             moveCam(new LatLng(mLocation.getLatitude(), mLocation.getLongitude()),
