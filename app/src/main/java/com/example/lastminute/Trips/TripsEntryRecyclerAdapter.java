@@ -17,7 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lastminute.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class TripsEntryRecyclerAdapter extends FirestoreRecyclerAdapter<TripEntryDetails, TripsEntryRecyclerAdapter.TripEntryViewHolder> {
     private TripListener tripListener;
@@ -53,7 +59,24 @@ public class TripsEntryRecyclerAdapter extends FirestoreRecyclerAdapter<TripEntr
     }
 
     public void deleteItem(int position) {
-        getSnapshots().getSnapshot(position).getReference().delete();
+        final DocumentReference documentReference = getSnapshots().getSnapshot(position).getReference();
+        documentReference.delete();
+        FirebaseFirestore.getInstance().collection("Trips")
+                .document(documentReference.getId())
+                .collection("Activities")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                                documentReference.collection("Activities")
+                                        .document(documentSnapshot.getId()).delete();
+                            }
+                        }
+                    }
+                });
+        notifyDataSetChanged();
     }
 
     class TripEntryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
