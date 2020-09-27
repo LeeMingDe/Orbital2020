@@ -178,7 +178,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     }
 
     private void initializePlacesSDK() {
-        Places.initialize(getActivity().getApplicationContext(), "AIzaSyAeua6lsCCjJVfVn9dRmuhCdQx4qwCizrk");
+        Places.initialize(getActivity().getApplicationContext(), getString(R.string.google_maps_key));
         placesClient = Places.createClient(getActivity());
         inputSearch.setFocusable(false);
         inputSearch.setOnClickListener(new View.OnClickListener() {
