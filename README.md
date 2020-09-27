@@ -103,6 +103,9 @@ After logging in, there will be a bottom navigation menu for the user to navigat
  <pre>    Help Page</pre>
                        
 ### <h3> Installation
+  Simply sign up for an Firebase Account and create a project to get an google-service.json file. Paste the google-service.json file
+  into App folder to link it to firebase.
+  Sign up for Google Maps API and paste the API key into the google maps_api.xml file in "../app/release/res/values".
   
   **Without Android phone:**
 
