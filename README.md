@@ -123,7 +123,7 @@ After logging in, there will be a bottom navigation menu for the user to navigat
 
 **With Android phone (API 28 and above):**
 
-1. Download the APK (https://www.dropbox.com/s/1d1j9jruqnfurt7/lastMinute.apk?dl=0)
+1. Download the APK
 2. Transfer APK to phone
 3. Install our application and run it
 
