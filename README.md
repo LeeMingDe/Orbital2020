@@ -4,6 +4,8 @@
 
 Our application provides an all in one solution which can be used for travelling. The application will consist of 4 main functions. These functions are the trips function, diary function, map function and currency converter function.
 
+Demostration of product: https://youtu.be/rOfHHPphBHM
+
 **Core Features of the application (essential to have):**
 
 A built-in planner that allows the user to plan for the trips that they would like to go to. Users can add specific activities with details like destination, date, time and description about each activity.
